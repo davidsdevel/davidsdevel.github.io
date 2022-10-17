@@ -5,9 +5,10 @@ import Education from '../components/education';
 import Experience from '../components/experience';
 import Header from '../components/header';
 import Nav from '../components/nav';
-import Skills from '../components/skills';
+import Skills from '../components/skills/index';
 import Portfolio from '../components/portfolio';
 import Contact from '../components/contact';
+import Footer from '../components/footer';
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
       <Experience/>
       <Portfolio/>
       <Contact/>
+      <Footer/>
     </div>
   )
 }

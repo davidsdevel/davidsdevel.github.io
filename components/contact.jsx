@@ -1,7 +1,7 @@
 export default function Contact() {
   return <section id="contact" className="contact">
       <div className="section-heading text-center">
-        <h2>contact me</h2>
+        <h2>Contáctame</h2>
       </div>
       <div className="container">
         <div className="contact-content">
@@ -51,8 +51,8 @@ export default function Contact() {
               <div className="single-contact-box">
                 <div className="contact-adress">
                   <div className="contact-add-head">
-                    <h3>browny star</h3>
-                    <p>uI/uX designer</p>
+                    <h3>David Gonzalez</h3>
+                    <p>Full-Stack Developer - LetterCMS owner</p>
                   </div>
                   <div className="contact-add-info">
                     <div className="single-contact-add-info">
@@ -71,11 +71,10 @@ export default function Contact() {
                 </div>
                 <div className="hm-foot-icon">
                   <ul>
-                    <li><a href="#"><i className="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i className="fa fa-dribbble"></i></a></li>
-                    <li><a href="#"><i className="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i className="fa fa-linkedin"></i></a></li>
-                    <li><a href="#"><i className="fa fa-instagram"></i></a></li>
+                    <li><a target='_blank' href="https://facebook.com/davidsdevel"><i className="fa fa-facebook"></i></a></li>
+                    <li><a target='_blank' href="https://twitter.com/davidsdevel"><i className="fa fa-twitter"></i></a></li>
+                    <li><a target='_blank' href="https://www.linkedin.com/in/davidsdevel"><i className="fa fa-linkedin"></i></a></li>
+                    <li><a target='_blank' href="https://instagram.com/davidsdevel"><i className="fa fa-instagram"></i></a></li>
                   </ul>
                 </div>
               </div>
