@@ -8,7 +8,9 @@ export default function Menu() {
           <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
             <i className="fa fa-bars"></i>
           </button>
-          <a className="navbar-brand" href="/">browny</a>
+          <Link href='/'>
+            <a className="navbar-brand">browny</a>
+          </Link>
         </div>
         <div className="collapse navbar-collapse menu-ui-design" id="navbar-menu">
           <ul className="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
