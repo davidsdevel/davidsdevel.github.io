@@ -1,9 +1,11 @@
 export default function Footer() {
+  const date = new Date();
+
   return <footer id="footer-copyright" className="footer-copyright">
     <div className="container">
       <div className="hm-footer-copyright text-center">
         <p>
-          &copy; copyright David&apos;s Devel. design and developed by <a href="https://www.themesine.com/">themesine</a>
+          &copy; copyright David&apos;s Devel. {date.getFullYear()}
         </p>
       </div>
     </div>

@@ -9,7 +9,9 @@ export default function Menu() {
             <i className="fa fa-bars"></i>
           </button>
           <Link href='/'>
-            <a className="navbar-brand">browny</a>
+            <a className="navbar-brand">
+              <img src='/images/about/davidsdevel-logo.png'/>
+            </a>
           </Link>
         </div>
         <div className="collapse navbar-collapse menu-ui-design" id="navbar-menu">
@@ -37,7 +39,7 @@ export default function Menu() {
             </li>
             <li className="smooth-menu">
               <Link href="#contact">
-                <a>Contácto</a>
+                <a>Contacto</a>
               </Link>
             </li>
           </ul>

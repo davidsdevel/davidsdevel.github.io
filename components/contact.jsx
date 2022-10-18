@@ -13,33 +13,33 @@ export default function Contact() {
                     <div className="row">
                       <div className="col-sm-6 col-xs-12">
                         <div className="form-group">
-                          <input type="text" className="form-control" id="name" placeholder="Name*" name="name"/>
+                          <input type="text" className="form-control" id="name" placeholder="Nombre*" name="name"/>
                         </div>
                       </div>
                       <div className="col-sm-6 col-xs-12">
                         <div className="form-group">
-                          <input type="email" className="form-control" id="email" placeholder="Email*" name="email"/>
+                          <input type="email" className="form-control" id="email" placeholder="Correo*" name="email"/>
                         </div>
                       </div>
                     </div>
                     <div className="row">
                       <div className="col-sm-12">
                         <div className="form-group">
-                          <input type="text" className="form-control" id="subject" placeholder="Subject" name="subject"/>
+                          <input type="text" className="form-control" id="subject" placeholder="Asunto" name="subject"/>
                         </div>
                       </div>
                     </div>
                     <div className="row">
                       <div className="col-sm-12">
                         <div className="form-group">
-                          <textarea className="form-control" rows="8" id="comment" placeholder="Message" ></textarea>
+                          <textarea className="form-control" rows="8" id="comment" placeholder="Mensaje" ></textarea>
                         </div>
                       </div>
                     </div>
                     <div className="row">
                       <div className="col-sm-12">
                         <div className="single-contact-btn">
-                          <a className="contact-btn" href="#" role="button">submit</a>
+                          <a className="contact-btn" href="#" role="button">Enviar</a>
                         </div>
                       </div>
                     </div>
@@ -52,20 +52,16 @@ export default function Contact() {
                 <div className="contact-adress">
                   <div className="contact-add-head">
                     <h3>David Gonzalez</h3>
-                    <p>Full-Stack Developer - LetterCMS owner</p>
+                    <p>Desarrollador Full-Stack - Creador de LetterCMS</p>
                   </div>
                   <div className="contact-add-info">
                     <div className="single-contact-add-info">
-                      <h3>phone</h3>
-                      <p>987-123-6547</p>
+                      <h3>Email</h3>
+                      <p>davidsdevel@gmail.com</p>
                     </div>
                     <div className="single-contact-add-info">
-                      <h3>email</h3>
-                      <p>browny@info.com</p>
-                    </div>
-                    <div className="single-contact-add-info">
-                      <h3>website</h3>
-                      <p>www.brownsine.com</p>
+                      <h3>Sitio Web</h3>
+                      <p>davidsdevel.github.io</p>
                     </div>
                   </div>
                 </div>
@@ -75,6 +71,7 @@ export default function Contact() {
                     <li><a target='_blank' href="https://twitter.com/davidsdevel" rel="noreferrer"><i className="fa fa-twitter"></i></a></li>
                     <li><a target='_blank' href="https://www.linkedin.com/in/davidsdevel" rel="noreferrer"><i className="fa fa-linkedin"></i></a></li>
                     <li><a target='_blank' href="https://instagram.com/davidsdevel" rel="noreferrer"><i className="fa fa-instagram"></i></a></li>
+                    <li><a target='_blank' href="https://github.com/davidsdevel" rel="noreferrer"><i className="fa fa-github"></i></a></li>
                   </ul>
                 </div>
               </div>

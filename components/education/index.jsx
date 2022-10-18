@@ -20,6 +20,15 @@ const education = [
     description: 'Conceptos basicos de programacion con JavaScript, creación y planificación de desarrollo de software'
   },
   {
+    uni: 'INCES',
+    location: 'Carabobo Venezuela',
+    since: '2020',
+    until: '2020',
+    grade: 'Curso',
+    title: 'Electronica Básica',
+    description: 'Creacion y diseño de circuitos, reparacion y mantenimiento de equipos electronicos'
+  },
+  {
     uni: 'HubSpot Academy',
     location: 'Curso Online',
     since: '2020',

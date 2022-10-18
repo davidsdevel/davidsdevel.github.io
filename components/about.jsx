@@ -14,6 +14,10 @@ const socialMedia = [
   {
     url: 'https://www.linkedin.com/in/davidsdevel',
     type: 'linkedin'
+  },
+  {
+    url: 'https://github.com/davidsdevel',
+    type: 'github'
   }
 ]
 
@@ -28,28 +32,22 @@ export default function About() {
             <div className="col-sm-6">
               <div className="single-about-txt">
                 <h3>
-                  I am a Professional UI/UX Designer and Web developer. Consectetur an adipisi elita, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud.
+                  Soy un joven Venezolano desarrollador FullStack Javascript, principalmente con las tecnologias: NextJS, MongoDB, NodeJS. Apasionado por lo que hago, autodidacta y emprendedor. Amante del marketing, ventas y diseño. Creador de LetterCMS, proyecto con el cual tengo la vision de mejorar la manera en que los pequeños creadores de contenido, planifican, crean, promocionan y entregan su contenido, ofreciendo una experiencia de calidad tanto para creadores como para el usuario final
                 </h3>
                 <p>
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspi unde omnis iste natus error sit voluptatem accusantium doloremque lauda ntium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam vo luptatem quia voluptas sit aspernatur aut odit aut fugit,
+                Mi mayor experiencia es desarrollando software de manera personal, creando y probando ideas, LetterCMS naci&oacute; de una de esas ideas. Desarollar software y poderlo integrar a distintas areas es de las mejores formas de crearlo, satisfacer una necesidad de la vida real a travez del software. A veces no debemos reinventar la rueda, pero si mejorar la que ya tenemos.
                 </p>
                 <div className="row">
                   <div className="col-sm-4">
                     <div className="single-about-add-info">
-                      <h3>phone</h3>
-                      <p>987-123-6547</p>
-                    </div>
-                  </div>
-                  <div className="col-sm-4">
-                    <div className="single-about-add-info">
                       <h3>email</h3>
-                      <p>browny@info.com</p>
+                      <p>davidsdevel@gmail.com</p>
                     </div>
                   </div>
                   <div className="col-sm-4">
                     <div className="single-about-add-info">
-                      <h3>website</h3>
-                      <p>www.brownsine.com</p>
+                      <h3>Sitio Web</h3>
+                      <p>davidsdevel.github.io</p>
                     </div>
                   </div>
                 </div>
@@ -57,7 +55,7 @@ export default function About() {
             </div>
             <div className="col-sm-offset-1 col-sm-5">
               <div className="single-about-img">
-                <img src="assets/images/about/profile_image.jpg" alt="profile_image"/>
+                <img src="/images/about/profile.webp" alt="profile_image"/>
                 <div className="about-list-icon">
                   <ul>
                    {
