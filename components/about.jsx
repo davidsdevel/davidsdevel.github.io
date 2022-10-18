@@ -55,7 +55,7 @@ export default function About() {
             </div>
             <div className="col-sm-offset-1 col-sm-5">
               <div className="single-about-img">
-                <img src="/images/about/profile.webp" alt="profile_image"/>
+                <img src="/images/about/davidsdevel-profile.webp" alt="David's Devel Developer Picture"/>
                 <div className="about-list-icon">
                   <ul>
                    {
