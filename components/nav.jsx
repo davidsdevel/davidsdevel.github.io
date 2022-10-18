@@ -1,3 +1,4 @@
+import Link from 'next/link';
 
 export default function Menu() {
   return <header className="top-area">
@@ -12,11 +13,31 @@ export default function Menu() {
         <div className="collapse navbar-collapse menu-ui-design" id="navbar-menu">
           <ul className="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
           <li className=" smooth-menu active"></li>
-            <li className=" smooth-menu"><a href="#education">Educación</a></li>
-            <li className="smooth-menu"><a href="#skills">Habilidades</a></li>
-            <li className="smooth-menu"><a href="#experience">Experiencia</a></li>
-            <li className="smooth-menu"><a href="#portfolio">Portafolio</a></li>
-            <li className="smooth-menu"><a href="#contact">Contacto</a></li>
+            <li className="smooth-menu">
+              <Link href="#education">
+                <a>Educación</a>
+              </Link>
+            </li>
+            <li className="smooth-menu">
+              <Link href="#skills">
+                <a>Habilidades</a>
+              </Link>
+            </li>
+            <li className="smooth-menu">
+              <Link href="#experience">
+                <a>Experiencia</a>
+              </Link>
+            </li>
+            <li className="smooth-menu">
+              <Link href="#portfolio">
+                <a>Portafolio</a>
+              </Link>
+            </li>
+            <li className="smooth-menu">
+              <Link href="#contact">
+                <a>Contácto</a>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

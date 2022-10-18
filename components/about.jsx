@@ -63,7 +63,7 @@ export default function About() {
                    {
                      socialMedia.map(e => {
                       return <li key={e.url}>
-                        <a href={e.url} target='_blank'>
+                        <a href={e.url} target='_blank' rel="noreferrer">
                           <i className={`fa fa-${e.type}`} aria-hidden="true"></i>
                         </a>
                       </li>

@@ -71,10 +71,10 @@ export default function Contact() {
                 </div>
                 <div className="hm-foot-icon">
                   <ul>
-                    <li><a target='_blank' href="https://facebook.com/davidsdevel"><i className="fa fa-facebook"></i></a></li>
-                    <li><a target='_blank' href="https://twitter.com/davidsdevel"><i className="fa fa-twitter"></i></a></li>
-                    <li><a target='_blank' href="https://www.linkedin.com/in/davidsdevel"><i className="fa fa-linkedin"></i></a></li>
-                    <li><a target='_blank' href="https://instagram.com/davidsdevel"><i className="fa fa-instagram"></i></a></li>
+                    <li><a target='_blank' href="https://facebook.com/davidsdevel" rel="noreferrer"><i className="fa fa-facebook"></i></a></li>
+                    <li><a target='_blank' href="https://twitter.com/davidsdevel" rel="noreferrer"><i className="fa fa-twitter"></i></a></li>
+                    <li><a target='_blank' href="https://www.linkedin.com/in/davidsdevel" rel="noreferrer"><i className="fa fa-linkedin"></i></a></li>
+                    <li><a target='_blank' href="https://instagram.com/davidsdevel" rel="noreferrer"><i className="fa fa-instagram"></i></a></li>
                   </ul>
                 </div>
               </div>
