@@ -35,7 +35,7 @@ export default function About() {
                   Soy un joven Venezolano desarrollador FullStack Javascript, principalmente con las tecnologias: NextJS, MongoDB, NodeJS. Apasionado por lo que hago, autodidacta y emprendedor. Amante del marketing, ventas y diseño. Creador de LetterCMS, proyecto con el cual tengo la vision de mejorar la manera en que los pequeños creadores de contenido, planifican, crean, promocionan y entregan su contenido, ofreciendo una experiencia de calidad tanto para creadores como para el usuario final
                 </h3>
                 <p>
-                Mi mayor experiencia es desarrollando software de manera personal, creando y probando ideas, LetterCMS naci&oacute; de una de esas ideas. Desarollar software y poderlo integrar a distintas areas es de las mejores formas de crearlo, satisfacer una necesidad de la vida real a travez del software. A veces no debemos reinventar la rueda, pero si mejorar la que ya tenemos.
+                Mi mayor experiencia es desarrollando software de manera personal, creando y probando ideas, LetterCMS naci&oacute; de una de esas ideas. Desarollar software y poderlo integrar a distintas areas es de las mejores formas de crearlo, satisfacer una necesidad de la vida real a trav&eacute;s del software. A veces no debemos reinventar la rueda, pero si mejorar la que ya tenemos.
                 </p>
                 <div className="row">
                   <div className="col-sm-4">
