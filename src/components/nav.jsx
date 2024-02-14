@@ -9,37 +9,33 @@ export default function Menu() {
             <i className="fa fa-bars"></i>
           </button>
           <Link href='/'>
-            <a className="navbar-brand">
-              <img src='/images/about/davidsdevel-logo.png'/>
-            </a>
+            <img src='/images/about/davidsdevel-logo.png'/>
           </Link>
         </div>
         <div className="collapse navbar-collapse menu-ui-design" id="navbar-menu">
           <ul className="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
           <li className=" smooth-menu active"></li>
             <li className="smooth-menu">
-              <Link href="#education">
-                <a>Educación</a>
-              </Link>
+              <Link href="#education">Educación</Link>
             </li>
             <li className="smooth-menu">
               <Link href="#skills">
-                <a>Habilidades</a>
+                Habilidades
               </Link>
             </li>
             <li className="smooth-menu">
               <Link href="#experience">
-                <a>Experiencia</a>
+                Experiencia
               </Link>
             </li>
             <li className="smooth-menu">
               <Link href="#portfolio">
-                <a>Portafolio</a>
+                Portafolio
               </Link>
             </li>
             <li className="smooth-menu">
               <Link href="#contact">
-                <a>Contacto</a>
+                Contacto
               </Link>
             </li>
           </ul>
