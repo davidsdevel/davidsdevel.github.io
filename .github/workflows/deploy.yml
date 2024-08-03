@@ -57,6 +57,8 @@ jobs:
     - run: rm README.md
     - run: cat package.json | jq '.scripts.build = "echo Done"' > package2.json
     - run: mv package2.json package.json
+    - run: git config --global user.email "you@example.com"
+    - run: git config --global user.name "Your Name"
     - run: git remote add dokku dokku@${{ secrets.DEPLOYMENT_IP }}:www
     - run: git add .
     - run: git commit -m "Deploy"
