@@ -1,26 +1,3 @@
-const socialMedia = [
-  {
-    url: 'https://www.facebook.com/davidsdevel',
-    type: 'facebook'
-  },
-  {
-    url: 'https://twitter.com/davidsdevel',
-    type: 'twitter'
-  },
-  {
-    url: 'https://www.instagram.com/davidsdevel',
-    type: 'instagram'
-  },
-  {
-    url: 'https://www.linkedin.com/in/davidsdevel',
-    type: 'linkedin'
-  },
-  {
-    url: 'https://github.com/davidsdevel',
-    type: 'github'
-  }
-]
-
 export default function About() {
   return <section id="about" className='bg-main-1 pt-20 pb-40 text-white'>
       <div className="w-full flex justify-center">
@@ -29,7 +6,7 @@ export default function About() {
       <div>
         <div className='w-full flex flex-col items-center py-12'>
           <h3 className='px-2 text-center text-lg md:w-1/2'>
-            Soy un joven Venezolano desarrollador FullStack Javascript, principalmente con las tecnologias: NextJS, MongoDB, NodeJS. Apasionado por lo que hago, autodidacta y emprendedor. Amante del marketing, ventas y diseño. Creador de LetterCMS, proyecto con el cual practiqué todo lo aprendido. Con este proyecto tengo la vision de mejorar la manera en que los pequeños creadores de contenido planifican, crean, promocionan y entregan su contenido, ofreciendo una experiencia de calidad tanto para creadores como para el usuario final
+            Soy un joven Venezolano desarrollador FullStack Javascript, principalmente con las tecnologias: ReactJS, MongoDB, NodeJS. Apasionado por lo que hago, autodidacta y emprendedor. Amante del marketing, ventas y diseño. Creador de LetterCMS, proyecto con el cual practiqué todo lo aprendido. Con este proyecto tengo la vision de mejorar la manera en que los pequeños creadores de contenido planifican, crean, promocionan y entregan su contenido, ofreciendo una experiencia de calidad tanto para creadores como para el usuario final
           </h3>
         </div>
         <div className="w-full flex flex-col items-center px-2 py-12 md:py-40 md:flex-row md:px-24">

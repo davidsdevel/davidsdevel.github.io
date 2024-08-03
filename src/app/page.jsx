@@ -5,6 +5,11 @@ import Portfolio from '@/components/portfolio';
 import Collab from '@/components/collab';
 import Contact from '@/components/contact';
 
+export const metadata = {
+    title: 'Desarrollador Full Stack en Tecnologia Javascript',
+    description: 'Desarrollador Full Stack en Tecnologia Javascript'
+}
+
 export default function Main() {
     return <>
         <Header/>
