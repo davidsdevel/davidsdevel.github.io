@@ -9,7 +9,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     name: "Deploy"
-    if: ${{ needs.changes.outputs.auth == 'true' }}
     environment:
       name: Production
       url: https://www.davidsdevel.site
