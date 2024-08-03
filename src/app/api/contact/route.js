@@ -1,11 +1,9 @@
 import { IncomingWebhook } from '@slack/webhook';
 
-const url = process.env.SLACK_WEBHOOK_URL;
-
-const webhook = new IncomingWebhook(url);
-
 export async function POST(req) {
-  const {name, email, message} = await req.json();
+	const {name, email, message} = await req.json();
+
+	const webhook = new IncomingWebhook(process.env.SLACK_WEBHOOK_URL);
 
   await webhook.send({
     text: "Danny Torrence left a 1 star review for your property.",
