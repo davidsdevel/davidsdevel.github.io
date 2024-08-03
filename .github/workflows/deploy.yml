@@ -52,6 +52,7 @@ jobs:
     - run: rm -rf src
     - run: rm -rf .next/cache
     - run: rm -rf .github
+    - run: rm -rf .gitignore
     - run: rm -rf .idx
     - run: rm -rf node_modules
     - run: rm README.md
