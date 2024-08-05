@@ -9,6 +9,11 @@ const projects = [
     url: 'https://www.sagacondominios.com'
   },
   {
+    title: 'Communication system',
+    img: '/images/portfolio/lakar.webp',
+    url: 'https://lakar.davidsdevel.site'
+  },
+  {
     title: 'Content Management System (Still in Development)',
     img: '/images/portfolio/lettercms.webp',
     url: 'https://lettercms.vercel.app'
