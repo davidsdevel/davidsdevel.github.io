@@ -16,6 +16,15 @@ export default function Contact() {
     if (isLoading)
       return;
 
+    if (!name)
+      return toast.info('El nombre es requerido');
+
+    if (!email)
+      return toast.info('El correo es requerido');
+
+    if (!message)
+      return toast.info('El mensaje es requerido');
+
     const messagePromise = async () => {
       setIsLoading(true)
 
