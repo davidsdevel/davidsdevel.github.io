@@ -57,7 +57,7 @@ export default function Skills() {
       <div className='grid grid-cols-1 gap-4 w-full sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
         {skills.map((e, i) => {
           return <div key={e.name} className='w-full flex flex-col items-center py-8 border border-gray-500 rounded-lg'>
-            <div className='bg-main-2 p-4 rounded-full'>
+            <div className='bg-accent-1 p-4 rounded-full'>
               {e.ico}
             </div>
             <h4 className='text-3xl text-white py-4'>{e.name}</h4>

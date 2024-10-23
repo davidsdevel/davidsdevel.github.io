@@ -77,7 +77,7 @@ export default function Contact() {
         <Input label='Nombre' placeholder='Juan Perez' onChange={({target: {value}}) => setName(value)}/>
         <Input label='Correo' type='email' placeholder='juan@domain.com' onChange={({target: {value}}) => setEmail(value)}/>
         <Input label='Mensaje' type='textarea' onChange={({target: {value}}) => setMessage(value)}/>
-        <button className='bg-main-1 text-white w-full py-3 rounded-full' disabled={isLoading}>Enviar</button>
+        <button className='bg-accent-1 text-white w-full py-3 rounded-full' disabled={isLoading}>Enviar</button>
       </form>
     </div>
   </div>

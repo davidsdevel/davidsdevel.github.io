@@ -32,7 +32,7 @@ export default function Portfolio() {
             <div style={{backgroundImage: `url(${e.img})`}} className='bg-center bg-cover h-60 rounded-xl relative overflow-hidden border border-gray-200 group'>
               <div className="opacity-0 bg-[#000a] transition-all ease duration-300 w-full h-full absolute top-0 left-0 flex flex-col items-center justify-center px-4 group-hover:opacity-100">
                 <span className='text-white text-xl text-center'>{e.title}</span>
-                <Button className='mt-8' onClick={() => window.open(e.url, '_blank')}>Visitar Proyecto</Button>
+                <Button className='mt-8 bg-accent-1' onClick={() => window.open(e.url, '_blank')}>Visitar Proyecto</Button>
               </div>
             </div>
           </li>

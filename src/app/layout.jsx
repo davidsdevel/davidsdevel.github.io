@@ -8,6 +8,7 @@ import './global.css';
 export default function RootLayout({children}) {
   return <html lang="en">
     <body>
+      <Nav/>
       <main>{children}</main>
       <div className='relative'>
         <Footer/>
