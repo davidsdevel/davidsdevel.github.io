@@ -12,7 +12,7 @@ export default function Home({posts, pagination}) {
       main
     />
     {/*<Recommended posts={posts.slice(0, 3)}/>*/}
-    <div className='flex w-full'>
+    <div className='flex w-full px-2 md:px-4'>
       <Entries posts={posts} actual={pagination?.page} pages={pagination?.total}/>
       {/*<Aside entries={popular} tags={blog.tags} categories={blog.categories}/>*/}
       {/*<Aside/>*/}

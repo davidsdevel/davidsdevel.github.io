@@ -17,6 +17,11 @@ const projects = [
     title: 'Content Management System (Still in Development)',
     img: '/images/portfolio/lettercms.webp',
     url: 'https://lettercms.vercel.app'
+  },
+  {
+    title: 'Radio Station Landing Page',
+    img: '/images/portfolio/lavozdeoieniv.webp',
+    url: 'https://www.lavozdeoieniv.com'
   }
 ];
 

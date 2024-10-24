@@ -23,7 +23,8 @@
   border-radius: 0.5rem;
 }
 .content a {
-  color: #5f4dee;
+  color: #e65806;
+  text-decoration: underline;
 }
 .content b,
 .content strong {

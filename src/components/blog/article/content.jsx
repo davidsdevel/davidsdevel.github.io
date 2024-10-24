@@ -3,7 +3,7 @@
 import {content} from './content.module.css';
 import {getGMTDate} from '@/lib/date';
 
-export default function Content({html, published, tags}) {
+export default function Content({html, published}) {
   /*useEffect(() => {
     let lazyImages = [].slice.call(document.querySelectorAll('img.lazy-img'));
     let active = false;
@@ -46,21 +46,11 @@ export default function Content({html, published, tags}) {
     };
   }, [asPath]);*/
 
-  return <div className='w-full container flex flex-col lg:w-2/3 mb-12 m-auto max-w-4xl'>
+  return <div className='w-full container flex flex-col mb-12'>
     <span className='text-main-500 mx-4 mb-8 font-bold text-sm'>{getGMTDate(published)}</span>
     <main
-      className={content}
+      className={`${content} m-auto max-w-4xl lg:w-2/3`}
       dangerouslySetInnerHTML={{__html: html}}
     />
-    <div className='mx-4 mt-8'>
-      <div className='mb-4'>
-        <span className='ml-2 text-sm font-bold text-main-700'>Etiquetas</span>
-      </div>
-      <ul className='flex flex-wrap'>
-        {
-          tags.map(e => <li key={e} className='bg-accent-1 text-white px-2 py-1 rounded-xl my-1 mx-2'>{e}</li>)
-        }
-      </ul>
-    </div>
   </div>;
 }

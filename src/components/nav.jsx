@@ -2,11 +2,15 @@
 
 import { socialMedia } from '@/lib/config';
 import Link from 'next/link';
-import { useEffect, useLayoutEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import {CiMenuBurger, CiCircleRemove} from 'react-icons/ci'
 
 export default function Menu() {
   const navBar = useRef(null);
+  const overflowRef = useRef(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname()
 
   useLayoutEffect(() => {
     if (navBar.current) {
@@ -21,7 +25,6 @@ export default function Menu() {
           navBar.current.style.marginTop = '1rem';
           navBar.current.style.borderRadius = '10000000px';
           navBar.current.style.border = '1px solid #eee';
-
         }
       }
   
@@ -34,8 +37,28 @@ export default function Menu() {
     }
   }, []);
 
+  useEffect(() => {
+    if (overflowRef.current) {
+      if (isMenuOpen) {
+        overflowRef.current.style.display = 'flex';
+        setTimeout(() => {
+          overflowRef.current.style.opacity = '1';
+        }, 0);
+      } else {
+        overflowRef.current.style.opacity = '0';
+
+        setTimeout(() => {
+          overflowRef.current.style.display = 'none';
+        }, 300);
+      }
+    }
+  },[isMenuOpen])
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname])
   return <nav className="w-full fixed z-50 top-0 left-0">
-    <div ref={navBar} className='transition-all duration-300 ease-in-out flex items-center m-auto border border-[#eee] w-[90%] mt-4 rounded-full justify-between p-6 bg-white'>
+    <div ref={navBar} className='transition-all duration-300 ease-in-out flex items-center m-auto border border-[#eee] w-[90%] mt-4 rounded-full justify-between p-4 md:p-6 bg-white'>
       <div>
         <Link href='/' className='hidden md:block'>Inicio</Link>
       </div>
@@ -45,15 +68,15 @@ export default function Menu() {
             <Link className='border border-gray-200 rounded-full py-2 px-4 hover:bg-main-1 hover:border-main-1 hover:text-white' href='/blog'>Blog</Link>
           </li>
         </ul>
-        <button className='md:hidden'>
+        <button className='md:hidden' onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <CiMenuBurger/>
         </button>
       </div>
     </div>
-    <div id='mobile-overflow' className='top-0 m-auto left-0 z-50 fixed w-full h-full bg-[#0009] hidden'>
+    <div id='mobile-overflow' ref={overflowRef} className='transition-all duration-300 ease top-0 m-auto left-0 z-50 fixed w-full h-full bg-[#0009] hidden'>
       <div className='absolute top-[5%] left-[5%] w-[90%] h-[90%] bg-white rounded-xl flex justify-center items-center'>
         <div className='absolute right-2 top-2'>
-          <button>
+          <button onClick={() => setIsMenuOpen(false)}>
             <CiCircleRemove className='w-8 h-8'/>
           </button>
         </div>
