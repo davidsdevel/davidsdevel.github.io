@@ -3,7 +3,7 @@
 import {content} from './content.module.css';
 import {getGMTDate} from '@/lib/date';
 
-export default function Content({html, published}) {
+export default function Content({html, published, updated}) {
   /*useEffect(() => {
     let lazyImages = [].slice.call(document.querySelectorAll('img.lazy-img'));
     let active = false;
@@ -46,10 +46,14 @@ export default function Content({html, published}) {
     };
   }, [asPath]);*/
 
-  return <div className='w-full container flex flex-col mb-12'>
-    <span className='text-main-500 mx-4 mb-8 font-bold text-sm'>{getGMTDate(published)}</span>
+  return <div className='w-full container flex flex-col mb-12 max-w-4xl m-auto'>
+    <span className='text-main-1 mx-4 mb-8 font-bold text-sm'>Publicado el {getGMTDate(published)}</span>
+    {
+      updated &&
+      <span className='text-main-1 mx-4 mb-8 font-bold text-sm'>Actualizado el {getGMTDate(updated)}</span>
+    }
     <main
-      className={`${content} m-auto max-w-4xl lg:w-2/3`}
+      className={`${content} m-auto`}
       dangerouslySetInnerHTML={{__html: html}}
     />
   </div>;

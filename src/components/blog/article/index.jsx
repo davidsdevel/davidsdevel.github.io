@@ -1,3 +1,4 @@
+import Aside from '../home/aside';
 import Header from '../home/header';
 //import Recommended from '@/components/client/home/recommended';
 import Content from './content';
@@ -10,16 +11,21 @@ export default function Article({post}) {
     <Header title={post.title} description={post.description} thumbnail={post.thumbnail} breadcrumbs/>
     {/*<Recommended post={recommended.slice(0, 3)}/>*/}
     <div className='flex flex-col md:flex-row mt-24 flex-wrap'>
-      <Content html={post.content} published={post.published}/>
-      <div className='w-full mt-8 bg-main-1 pt-12 pb-24'>
-        <div className='mb-4'>
-          <span className='ml-2 text-sm font-bold text-white'>Etiquetas</span>
+      <div className='flex-grow'>
+        <Content html={post.content} published={post.published}/>
+        <div className='w-full mt-8 bg-main-1 py-12 md:px-8 md:max-w-4xl md:rounded-lg md:m-auto md:mb-24'>
+          <div className='mb-4'>
+            <span className='ml-2 text-sm font-bold text-white'>Etiquetas</span>
+          </div>
+          <ul className='flex flex-wrap'>
+            {
+              post.tags.map(e => <li key={e} className='bg-accent-1 text-white px-2 py-1 rounded-xl my-1 mx-2'>{e}</li>)
+            }
+          </ul>
         </div>
-        <ul className='flex flex-wrap'>
-          {
-            post.tags.map(e => <li key={e} className='bg-accent-1 text-white px-2 py-1 rounded-xl my-1 mx-2'>{e}</li>)
-          }
-        </ul>
+      </div>
+      <div className='p-4 w-full md:w-1/3 md:max-w-md'>
+        <Aside/>
       </div>
       {/*<Aside entries={popular} tags={blog.tags} author={post.author} categories={blog.categories}/>*/}
       {/*

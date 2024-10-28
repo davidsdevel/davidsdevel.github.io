@@ -3,7 +3,7 @@ import Pagination from './pagination';
 
 export default function Entries({posts, actual, pages}) {
   return <div className='w-full max-w-7xl mx-auto'>
-    <div className='w-full'>
+    <div className='w-full h-8 md:pl-48'>
       <span className='font-bold text-sm'>Entradas</span>
     </div>
     <div className='grid grid-cols-1 md:grid-cols-2 gap-8 w-full mt-8'>
