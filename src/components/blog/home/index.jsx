@@ -7,7 +7,7 @@ export default function Home({posts, pagination}) {
   return <div className='min-h-screen'>
     <Header
       title="David's Devel - Blog"
-      description='Hola Mundo'
+      description='Blog enfocado en crecimiento digital'
       thumbnail=''
       main
     />

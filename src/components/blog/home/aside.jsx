@@ -4,7 +4,7 @@
 //import Search from './asideSearch';
 //import Categories from './asideCategories';
 import Link from 'next/link';
-import Author from './asideAuthor';
+import {socialMedia} from '@/lib/config'
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 
@@ -29,20 +29,15 @@ export default function Aside() {
         <span className='my-2 text-xl text-main-500'>Full Stack Developer</span>
       </div>
       <p className='mt-4 px-8 text-center'>Soy un desarrollador fullstack y marketer apasionado por aprender, crear, emprender y aportar tecnologicamente para el crecimiento</p>
-      <div className='flex margin-auto justify-between w-2/3 mt-8'>
-        <Link target='_blank' href='https://www.facebook.com/davidsdevel'>
-          <FaFacebook height='28'/>
-        </Link>
-        <Link target='_blank' href='https://www.twitter.com/davidsdevel'>
-          <FaTwitter height='28'/>
-        </Link>
-        <Link target='_blank' href='https://www.instagram.com/davidsdevel'>
-          <FaInstagram height='28'/>
-        </Link> 
-        <Link target='_blank' href='https://www.linkedin.com/in/davidsdevel'>
-          <FaLinkedin height='28'/>
-        </Link>
-      </div>
+      <ul className='flex justify-center items-center mt-8 gap-4'>
+        {
+          socialMedia.map(e => {
+            return <li key={e.url}>
+              <a href={e.url} target='_blank'>{e.ico}</a>
+            </li>
+          })
+        }
+      </ul>
     </div>
   </aside>; 
 }
