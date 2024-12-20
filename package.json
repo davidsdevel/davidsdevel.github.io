@@ -2,6 +2,9 @@
   "name": "davidsdevel",
   "version": "0.1.0",
   "private": true,
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
   "scripts": {
     "dev": "next dev --port 3005",
     "build": "next build",
@@ -10,17 +13,21 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-react": "^9.4.0",
     "@next/third-parties": "^14.2.15",
     "@prisma/client": "^5.21.1",
     "@slack/webhook": "^7.0.2",
+    "ckeditor5": "^44.1.0",
     "jsonwebtoken": "^9.0.2",
     "next": "^14.2.16",
     "next-auth": "^4.24.10",
     "prisma": "^5.21.1",
+    "prisma-extension-pagination": "^0.7.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^5.0.1",
-    "react-toastify": "^10.0.4"
+    "react-toastify": "^10.0.4",
+    "unsplash-js": "^7.0.19"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.17",

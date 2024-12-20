@@ -63,9 +63,12 @@ export default function Menu() {
         <Link href='/' className='hidden md:block'>Inicio</Link>
       </div>
       <div>
-        <ul className='hidden md:block'>
+        <ul className='hidden md:flex md:gap-2'>
           <li>
             <Link className='border border-gray-200 rounded-full py-2 px-4 hover:bg-main-1 hover:border-main-1 hover:text-white' href='/blog'>Blog</Link>
+          </li>
+          <li>
+            <Link className='border border-gray-200 rounded-full py-2 px-4 hover:bg-main-1 hover:border-main-1 hover:text-white' href='/about'>Acerca de mi</Link>
           </li>
         </ul>
         <button className='md:hidden' onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -86,6 +89,9 @@ export default function Menu() {
           </li>
           <li className='transition-all duration-150 ease w-full flex rounded-full border border-main-1 items-center justify-center py-2 hover:bg-main-1 hover:text-white'>
             <Link className='w-full text-center' href='/blog'>Blog</Link>
+          </li>
+          <li className='transition-all duration-150 ease w-full flex rounded-full border border-main-1 items-center justify-center py-2 hover:bg-main-1 hover:text-white'>
+            <Link className='w-full text-center' href='/about'>Acerca de mi</Link>
           </li>
           <li>
             <ul className='flex justify-center items-center mt-4 gap-4'>

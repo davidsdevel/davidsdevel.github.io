@@ -1,4 +1,4 @@
-import {BsFacebook, BsGithub, BsInstagram, BsLinkedin} from 'react-icons/bs';
+import {BsFacebook, BsGithub, BsInstagram, BsLinkedin, BsTiktok} from 'react-icons/bs';
 import { RiTwitterXLine } from 'react-icons/ri';
 
 export const socialMedia = [
@@ -21,5 +21,9 @@ export const socialMedia = [
     {
       url: 'https://github.com/davidsdevel',
       ico: <BsGithub className='w-8 h-8 text-gray-300 hover:text-[#000]'/>
+    },,
+    {
+      url: 'https://tiktok.com/davidsdevel',
+      ico: <BsTiktok className='w-8 h-8 text-gray-300 hover:text-[#000]'/>
     }
 ];
