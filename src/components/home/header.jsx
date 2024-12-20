@@ -10,7 +10,10 @@ export default function MarketingHeader() {
                 </div>
             </div>
             <div className="bg-white p-4 rounded-lg w-full m-auto md:max-w-md md:m-0">
-                <ContactForm buttonText="Solicitar cotizacion"/>
+                <ContactForm
+                    buttonText="Solicitar cotizacion"
+                    eventForm='Home Header'
+                />
             </div>
         </div>
     </header>

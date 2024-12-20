@@ -36,6 +36,7 @@ export default function Article({post}) {
           <ContactForm
             defaultMessage='Quiero solicitar una cotizacion para mi negocio'
             buttonText="Solicitar cotización"
+            eventForm='Post'
           />
         </div>
       </div>

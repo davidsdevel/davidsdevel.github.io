@@ -14,6 +14,7 @@ export default function CallToAction() {
             <ContactForm
                 defaultMessage='Quiero solicitar una cotizacion para mi negocio'
                 buttonText="Solicitar cotización"
+                eventForm='Home CTA'
             />
         </div>
     </section>

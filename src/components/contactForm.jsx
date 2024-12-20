@@ -4,8 +4,9 @@ import Input from '@/components/input';
 import { sendContactMessage } from '../actions';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
+import { sendGAEvent } from '@next/third-parties/google'
 
-export default function ContactForm({defaultMessage = '', buttonText = 'Enviar'}) {
+export default function ContactForm({defaultMessage = '', buttonText = 'Enviar', eventForm = ''}) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState(defaultMessage);
@@ -25,6 +26,10 @@ export default function ContactForm({defaultMessage = '', buttonText = 'Enviar'}
 
     if (!message)
       return toast.info('El mensaje es requerido');
+
+    sendGAEvent('event', 'contact', {
+      origin: eventForm
+    });
 
     const messagePromise = async () => {
       setIsLoading(true)
