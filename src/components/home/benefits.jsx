@@ -12,7 +12,7 @@ const benefits = [
     },
     {
         title: 'Digitaliza tu marca',
-        text: 'Da a conocer tu negocio al mundo sin ser frenado por las fronteras y conviertete tu negocio en lider de tu sector',
+        text: 'Da a conocer tu negocio al mundo sin ser frenado por las fronteras y convierte tu negocio en lider de tu sector',
         image: '/assets/branding.svg'
     }
 ]

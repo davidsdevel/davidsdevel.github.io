@@ -1,7 +1,6 @@
 import { ButtonView, Plugin } from 'ckeditor5';
 import {
 	figureToImageBlock,
-	imageDimensionsToDataFigure,
 	imageToDataFigure,
 	imageToEditFigure,
 } from './editorConverters';
@@ -33,7 +32,7 @@ export default class EditorPlugin extends Plugin {
 		const schema = this.editor.model.schema;
 
 		schema.extend('imageBlock', {
-			allowAttributes: ['data-src', 'data-width'],
+			allowAttributes: ['loading'],
 		});
 	}
 	_defineConverters() {
@@ -41,7 +40,6 @@ export default class EditorPlugin extends Plugin {
 
 		editor.conversion.for('upcast').elementToElement(figureToImageBlock);
 		editor.conversion.for('dataDowncast').add(imageToDataFigure);
-		editor.conversion.for('dataDowncast').add(imageDimensionsToDataFigure);
 		editor.conversion.for('editingDowncast').add(imageToEditFigure);
 	}
 }

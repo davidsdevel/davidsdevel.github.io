@@ -6,7 +6,13 @@ import Problem from "@/components/home/problem";
 import Transform from "@/components/home/transform";
 
 export const metadata = {
-    title: 'Marketing y transformación digital - David\'s Devel'
+    title: 'Marketing y transformación digital - David\'s Devel',
+    description: 'The React Framework for the Web',
+    openGraph: {
+        title: 'Marketing y transformación digital - David\'s Devel',
+        description: 'The React Framework for the Web',
+        url: 'https://www.davidsdevel.site'
+    }
 }
 
 export default function Page() {

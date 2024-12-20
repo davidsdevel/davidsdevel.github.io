@@ -47,8 +47,6 @@ export default function Pricing() {
             Sabemos que tú y tu negocio son únicos, consigue precios que se ajustan específicamente a tus necesidades.
             Tanto si estás comenzando y buscas una solución asequible,
             como si necesitas características avanzadas para llevar tu negocio al siguiente nivel.
-            
-            ¡Consigue una solución hecha a tu medida!
         </p>
 
         <div className="grid grid-cols gap-4 md:grid-cols-3 md:max-w-[70rem] md:m-auto">

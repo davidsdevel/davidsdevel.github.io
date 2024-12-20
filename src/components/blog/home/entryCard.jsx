@@ -19,7 +19,7 @@ export default function EntryCard({title, thumbnail, description, author, tags, 
         </Link>
         <h3 className='px-1 text-lg text-main-1 font-bold'>{title}</h3>
       </div>
-      <p className='py-3 mt-4 flex-grow'>{description}</p>
+      <p className='py-3 mt-4 flex-grow'>{description?.length > 180 ? description.slice(0, 177) + '...' : description}</p>
       <div className='hidden lg:flex items-center mt-4 gap-4'>
         <button className='flex-grow transition-all duration-150 ease cursor-pointer w-full border border-solid border-main-500 py-2 text-main-500 rounded-full hover:text-white hover:bg-accent-1 hover:border-accent-1' onClick={() => router.push(`/blog/${slug}`)}>Ver Más</button>
         <button className='cursor-pointer flex items-center justify-center' onFocus={() => setShowShare(true)} onBlur={() => setShowShare(false)}>

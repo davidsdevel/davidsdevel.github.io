@@ -1,9 +1,8 @@
-import request from "lib/cms/request"
 import { notFound } from "next/navigation";
 import Article from "@/components/blog/article"
 import prisma from "@/lib/prisma";
 
-function getPost(slug) {
+export function getPost(slug) {
     return prisma.post.findFirst({
         where: {
             status: 'PUBLISHED',
@@ -20,8 +19,34 @@ export async function generateMetadata({params}) {
     if (!data)
         return notFound();
 
+    const title = `${data.title} | David's Devel`;
+    const description = data.description;
+    const images = {
+        url: data.thumbnail
+    };
+    const keywords = data.tags;
+
     return {
-        title: `${data.title} | David's Devel  - Blog`
+        title,
+        description,
+        keywords,
+        openGraph: {
+            title,
+            description,
+            images,
+            type: 'article',
+        },
+        twitter: {
+            title,
+            description,
+            images
+        },
+        article: {
+            author: "David's Devel",
+            published_time: data.published,
+            modified_time: data.updated,
+            tags: keywords
+        }
     }
 }
 

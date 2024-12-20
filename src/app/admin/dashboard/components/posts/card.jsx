@@ -1,13 +1,12 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { BsEye } from 'react-icons/bs';
-import { CiEdit, CiTrash, CiWarning } from 'react-icons/ci';
+import { CiEdit, CiTrash, CiWarning, CiLink } from 'react-icons/ci';
 import TagList from './tagList';
 import { deletePost } from '../../actions';
 import Modal from '@/components/modal';
 import Button from '@/components/button';
 import { toast } from 'react-toastify';
-import { FaExternalLinkAlt } from 'react-icons/fa';
 
 export default function Card({
 	id,
@@ -40,27 +39,27 @@ export default function Card({
 	return <li key={`post-${id}`} className='bg-white border border-gray-200 rounded-lg flex overflow-hidden'>
 		{
             thumbnail
-                ? <div style={{ backgroundImage: `url(${thumbnail}&h=280&q=50)` }} className='w-48 h-48'/>
+                ? <div style={{ backgroundImage: `url(${thumbnail}&h=280&q=50)` }} className='w-48 h-48 bg-center bg-cover'/>
 		        : <div className='w-48 h-48 bg-main-1 text-white text-4xl flex items-center justify-center'>
 				    {!title ? 'N' : title[0].toUpperCase()}
 			      </div>
 		}
-		<div className='flex flex-col flex-grow items-center p-2'>
-			<div>
+		<div className='flex flex-col w-[calc(100%-192px)] items-center p-2 gap-2'>
+			<div className='w-full text-center'>
 				<span className='text-xl'>{title ? title : '(New Post)'}</span>
 			</div>
-			<div className='flex-grow'>
+			<div className='flex-grow flex items-end justify-end w-full'>
 				{
                     tags?.length > 0 &&
-					<>
-						<span>{tags[0]}</span>
+					<div className='flex gap-1'>
+						<span className='bg-accent-1 text-white py-[1px] px-2 rounded-lg'>{tags[0]}</span>
 						{
                             tags.length > 1 &&
-							<button onClick={() => setTagsOpen(!tagsOpen)} onBlur={() => setTagsOpen(false)}>
+							<button className='bg-accent-1 text-white py-[1px] px-2 rounded-lg' onClick={() => setTagsOpen(!tagsOpen)} onBlur={() => setTagsOpen(false)}>
                                 {`+${tags.length - 1}`}
                             </button>
 						}
-					</>
+					</div>
 				}
 			</div>
 			<div className='w-full flex justify-between'>
@@ -74,7 +73,7 @@ export default function Card({
 					{
 						status === 'PUBLISHED' &&
 						<button onClick={() => window.open(`/blog/${slug}`, '_blank')}>
-							<FaExternalLinkAlt className='w-6 h-6'/>
+							<CiLink className='w-6 h-6'/>
 						</button>
 					}
 					{/*

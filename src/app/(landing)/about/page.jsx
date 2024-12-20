@@ -6,7 +6,7 @@ import Collab from './components/collab';
 import Contact from './components/contact';
 
 export const metadata = {
-    title: 'Desarrollador Full Stack en Tecnologia Javascript',
+    title: 'Acerca de mi - David\'s Devel',
     description: 'Desarrollador Full Stack en Tecnologia Javascript'
 }
 

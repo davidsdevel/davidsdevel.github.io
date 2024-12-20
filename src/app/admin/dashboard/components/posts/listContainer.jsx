@@ -1,69 +1,53 @@
 'use client';
 
-import Button from '@/components/button';
 import {
 	usePathname,
 	useRouter,
 	useSearchParams
 } from 'next/navigation';
 import Card from './card';
+import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 
 export default function ListContainer({ data, meta }) {
 	const searchParams = useSearchParams();
 	const pathname = usePathname();
 	const router = useRouter();
 
-	const changePage = (page) => {
-		const status = searchParams.get('status');
+	const changePage = page => {
+		const params = new URLSearchParams(searchParams);
 
-		let path = `${pathname}?page=${page}`;
+		params.set('page', page);
 
-		if (status) {
-			path += `&status=${status}`;
-		}
-
-		router.push(path);
+		router.push(`${pathname}?${params.toString()}`);
 	};
 
 	if (data?.length === 0) {
 		return 'No posts...';
 	}
 
-	return (
-		<div className="p-4 sm:gap-4 md:p-8">
-			<ul className="w-full grid gap-2 grid-cols-1 mb-4 sm:gap-4 md:mb-8 sm:grid-cols-2">
-				{data.map((e) => {
-					return (
-						<Card
-							key={e.id}
-							{...e}
-						/>
-					);
-				})}
-			</ul>
-			<div className="w-full flex justify-between">
-				{meta.prev ? (
-					<Button
-						className="border border-main-500 text-main-500"
-						onClick={() => changePage(meta.prev)}
-					>
-						Prev Page
-					</Button>
-				) : (
-					<div />
-				)}
-				{meta.next ? (
-					<Button
-						className="border border-main-500 text-main-500"
-						onClick={() => changePage(meta.next)}
-					>
-						Next Page
-					</Button>
-				) : (
-					<div />
-				)}
-			</div>
-
+	return <div className="p-4 sm:gap-4 md:px-8 md:py-4">
+		<div className="w-full flex justify-end gap-2 mb-4 sm:mb-4">
+			<button
+				className="text-main-1 border border-main-1 rounded-full disabled:text-gray-400 disabled:border-gray-400"
+				onClick={() => changePage(meta.previousPage)}
+				disabled={!meta.previousPage}
+			>
+				<BiChevronLeft className='w-10 h-10'/>
+			</button>
+			<button
+				className="text-main-1 border border-main-1 rounded-full disabled:text-gray-400 disabled:border-gray-400"
+				onClick={() => changePage(meta.nextPage)}
+				disabled={!meta.nextPage}
+			>
+				<BiChevronRight className='w-10 h-10'/>
+			</button>
 		</div>
-	);
+		<ul className="w-full grid gap-2 grid-cols-1 mb-4 sm:gap-4 md:mb-8 sm:grid-cols-2">
+			{
+				data.map((e) => {
+					return <Card key={e.id} {...e} />
+				})
+			}
+		</ul>
+	</div>
 }

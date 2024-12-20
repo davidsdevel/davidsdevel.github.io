@@ -1,3 +1,4 @@
+import ContactForm from '@/components/contactForm';
 import Aside from '../home/aside';
 import Header from '../home/header';
 //import Recommended from '@/components/client/home/recommended';
@@ -12,7 +13,7 @@ export default function Article({post}) {
     {/*<Recommended post={recommended.slice(0, 3)}/>*/}
     <div className='flex flex-col md:flex-row mt-24 flex-wrap'>
       <div className='flex-grow'>
-        <Content html={post.content} published={post.published}/>
+        <Content html={post.content} published={post.published} updated={post.updated}/>
         <div className='w-full mt-8 bg-main-1 py-12 md:px-8 md:max-w-4xl md:rounded-lg md:m-auto md:mb-24'>
           <div className='mb-4'>
             <span className='ml-2 text-sm font-bold text-white'>Etiquetas</span>
@@ -27,22 +28,17 @@ export default function Article({post}) {
       <div className='p-4 w-full md:w-1/3 md:max-w-md'>
         <Aside/>
       </div>
-      {/*<Aside entries={popular} tags={blog.tags} author={post.author} categories={blog.categories}/>*/}
-      {/*
-        recommended?.length > 0 &&
-        <>
-          <div className='flex flex-wrap'>
-            <div className='w-full px-4 mt-8 lg:mt-0'>
-              <span className='text-lg font-bold text-main-700'>Te podría interesar</span>
-            </div>
-          </div>
-          <div className='flex flex-col lg:flex-row justify-around w-full'>
-            {
-              recommended.map(e => <Card key={e._id} {...e}/>)
-            }
-          </div>
-        </>
-      */}
+
+      
+      <div className='bg-main-1 w-full py-32'>
+        <h4 className='text-white text-4xl my-8 text-center'>Consigue soluciones digitales para el <span className='text-accent-1'>crecimiento de tu negocio</span></h4>
+        <div className='bg-white rounded-lg  max-w-md m-auto px-4 py-8'>
+          <ContactForm
+            defaultMessage='Quiero solicitar una cotizacion para mi negocio'
+            buttonText="Solicitar cotización"
+          />
+        </div>
+      </div>
     </div>
   </div>;
 }

@@ -5,7 +5,7 @@ import { sendContactMessage } from '../actions';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 
-export default function ContactForm({defaultMessage = ''}) {
+export default function ContactForm({defaultMessage = '', buttonText = 'Enviar'}) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState(defaultMessage);
@@ -60,9 +60,9 @@ export default function ContactForm({defaultMessage = ''}) {
   }
 
   return <form onSubmit={handleSubmit}>
-        <Input label='Nombre' placeholder='Juan Perez' onChange={({target: {value}}) => setName(value)} value={name}/>
-        <Input label='Correo' type='email' placeholder='juan@domain.com' onChange={({target: {value}}) => setEmail(value)} value={email}/>
-        <Input label='Mensaje' type='textarea' onChange={({target: {value}}) => setMessage(value)} value={message}/>
-        <button className='bg-accent-1 text-white w-full py-3 rounded-full' disabled={isLoading}>Enviar</button>
-    </form>
+      <Input label='Nombre' placeholder='Juan Perez' onChange={({target: {value}}) => setName(value)} value={name}/>
+      <Input label='Correo' type='email' placeholder='juan@domain.com' onChange={({target: {value}}) => setEmail(value)} value={email}/>
+      <Input className='h-40 resize-none' label='Mensaje' type='textarea' onChange={({target: {value}}) => setMessage(value)} value={message}/>
+      <button className='bg-accent-1 text-white w-full py-3 rounded-full' disabled={isLoading}>{buttonText}</button>
+  </form>
 }

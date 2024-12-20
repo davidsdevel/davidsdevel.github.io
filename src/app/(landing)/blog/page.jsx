@@ -2,7 +2,7 @@ import Blog from "@/components/blog/home"
 import prisma from "@/lib/prisma";
 
 export const metadata = {
-    title: 'David\'s Devel - Blog'
+    title: 'Entradas - David\'s Devel'
 }
 
 export default async function Page({searchParams: {page = '1'}}) {
@@ -11,7 +11,7 @@ export default async function Page({searchParams: {page = '1'}}) {
             status: 'PUBLISHED'
         },
         orderBy: {
-            created: 'desc'
+            published: 'desc'
         }
     })
     .withPages({

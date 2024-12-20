@@ -45,7 +45,7 @@ export default function Top() {
 	}, [isOpen]);
 
 	return <div>
-		<div className="w-full flex items-center justify-between p-8">
+		<div className="w-full flex items-center justify-between py-4 px-8 bg-gray-100">
 			<div>
 				<Button
 					className={'bg-accent-1 w-24 px-4 '}

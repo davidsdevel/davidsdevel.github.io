@@ -4,7 +4,7 @@ import Posts from './components/posts';
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
-	title: 'Dashboard | LetterCMS',
+	title: 'Entradas - David\'s Devel',
 };
 
 export default async function Page({searchParams: { page = '1', status }}) {

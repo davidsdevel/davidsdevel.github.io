@@ -1,5 +1,6 @@
 export function getGMTDate(stringDate) {
-    const date = new Date(stringDate || Date.now());
+    const date = new Date(new Date(stringDate || Date.now()).toLocaleString('en-US', { timeZone: 'America/Caracas' })) ;
+    
     const year = date.getFullYear();
     const day = date.getDate();
   

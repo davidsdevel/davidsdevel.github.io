@@ -13,6 +13,7 @@ export default function CallToAction() {
         <div className='px-6 py-12 border border-slate-200 rounded-lg w-full m-auto max-w-md md:m-0'>
             <ContactForm
                 defaultMessage='Quiero solicitar una cotizacion para mi negocio'
+                buttonText="Solicitar cotización"
             />
         </div>
     </section>

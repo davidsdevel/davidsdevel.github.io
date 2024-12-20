@@ -6,7 +6,7 @@ export function middleware(request) {
 
     const {nextUrl} = request;
 
-    const isLogged = !!request.cookies.get(isDev
+    const isLogged = isDev || !!request.cookies.get(isDev
         ? 'davidsdevel.session-token'
         : '__Secure-davidsdevel.session-token'
     );
