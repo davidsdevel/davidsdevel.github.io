@@ -6,6 +6,9 @@
   ];
   idx.extensions = [
     "Prisma.prisma"
+    "bradlc.vscode-tailwindcss"
+    "mtxr.sqltools"
+    "mtxr.sqltools-driver-pg"
   ];
   services = {
     postgres = {
