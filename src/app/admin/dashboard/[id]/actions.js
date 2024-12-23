@@ -62,7 +62,10 @@ export async function updatePost(id, data) {
         where: {
             id
         },
-        data
+        data: {
+            ...data,
+            previewContent: null
+        }
     });
 
     if (data.status === 'PUBLISHED') {
@@ -73,5 +76,19 @@ export async function updatePost(id, data) {
         return {
             status: 'OK'
         }
+    }
+}
+
+
+export async function enablePreview(id, data) {
+    await prisma.post.update({
+        where: {
+            id
+        },
+        data
+    });
+
+    return {
+        status: 'OK'
     }
 }

@@ -4,13 +4,14 @@ import Button from '@/components/button';
 import Input from '@/components/input';
 import dynamic from 'next/dynamic';
 import { useParams } from 'next/navigation';
-import { updatePost } from '../actions';
+import { enablePreview, updatePost } from '../actions';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import ImagesModal from './modal';
 import ImageList from './imageLiist';
+import ArticleStyles from './styles';
 
-const CustomEditor = dynamic( () => import( './editor' ), { ssr: false, loading: () => <div>Loading...</div> } );
+const CustomEditor = dynamic( () => import( './editor' ), { ssr: false, loading: () => <div className='w-full text-center my-24'>Loading...</div> } );
 
 export default function EditorPage({post}) {
     const [content, setContent] = useState(post.content || '');
@@ -52,8 +53,20 @@ export default function EditorPage({post}) {
           )
     }
 
+    const previewPost = async () => {
+        const {status} = await enablePreview(id, {
+            previewContent: content
+        });
+
+        if (status === 'OK') {
+            window.open(`/blog/${id}/preview`, '_blank');
+        } else {
+            toast.error('Error al habilitar la vista previa');
+        }
+    }
+
     return <div className='grid grid-cols-3 gap-4 p-8'>
-        <div className='col-span-2'>
+        <div className='content col-span-2'>
             <CustomEditor
                 content={content}
                 onChange={(content) => setContent(content)}
@@ -85,6 +98,9 @@ export default function EditorPage({post}) {
                             : 'Guardar'
                     }
                 </Button>
+                <Button onClick={previewPost} className='bg-gray-300 col-span-2'>
+                    Vista previa
+                </Button>
             </div>
         </div>
         <ImagesModal
@@ -102,5 +118,6 @@ export default function EditorPage({post}) {
                 }
             }
 		/>
+        <ArticleStyles/>
     </div>
 }
