@@ -1,6 +1,6 @@
 'use client';
 
-import {content} from './content.module.css';
+import ArticleStyles from 'app/admin/dashboard/[id]/components/styles';
 import {getGMTDate} from '@/lib/date';
 
 export default function Content({html, published, updated}) {
@@ -55,8 +55,9 @@ export default function Content({html, published, updated}) {
       }
     </div>
     <main
-      className={`${content} m-auto`}
+      className='ck-content mx-[2.5%] m-auto'
       dangerouslySetInnerHTML={{__html: html}}
     />
+    <ArticleStyles/>
   </div>;
 }

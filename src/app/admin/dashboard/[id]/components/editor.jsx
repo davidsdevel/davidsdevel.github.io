@@ -7,7 +7,6 @@ import {
 	AutoImage,
 	Autoformat,
 	Autosave,
-	BalloonEditor,
     ClassicEditor,
 	BalloonToolbar,
 	BlockQuote,
@@ -50,7 +49,6 @@ import {
 	Undo,
 } from 'ckeditor5';
 import CustomPlugin from '../lib/editorPlugin';
-
 import 'ckeditor5/ckeditor5.css';
 
 function CustomEditor({content, onChange, onChangeModalState, onLoad}) {
