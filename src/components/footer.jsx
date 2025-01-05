@@ -12,6 +12,17 @@ const links = [
   }
 ]
 
+const servicesLinks = [
+  {
+    label: 'LetterCMS',
+    href: '/services/lettercms'
+  },
+  //{
+  //  label: 'Monitor Icecast',
+  //  href: '/services/icecast'
+  //}
+]
+
 export default function Footer() {
   const date = new Date();
 
@@ -21,6 +32,18 @@ export default function Footer() {
       <ul className="flex flex-col gap-2 items-start">
         {
           links.map(e => {
+            return <li key={e.href}>
+              <Link href={e.href}>{e.label}</Link>
+            </li>
+          })
+        }
+      </ul>
+    </div>
+    <div className="flex-grow felx flex-col items-start">
+      <h5 className="text-2xl mb-8">Servicios</h5>
+      <ul className="flex flex-col gap-2 items-start">
+        {
+          servicesLinks.map(e => {
             return <li key={e.href}>
               <Link href={e.href}>{e.label}</Link>
             </li>

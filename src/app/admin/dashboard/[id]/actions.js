@@ -1,6 +1,7 @@
 'use server'
 
 import prisma from "@/lib/prisma"
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation"
 
 async function validateSlug(slug, id) {
@@ -69,8 +70,8 @@ export async function updatePost(id, data) {
     });
 
     if (data.status === 'PUBLISHED') {
-        //TODO: Revalidate post
-        
+        revalidatePath(`/blog/${data.slug}`);
+
         redirect('/admin');
     } else {
         return {

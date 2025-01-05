@@ -1,6 +1,9 @@
 import { notFound } from "next/navigation";
-import Article from "@/components/blog/article"
+import Article from "./components/index"
 import prisma from "@/lib/prisma";
+
+export const dynamic = "force-static";
+export const dynamicParams = true;
 
 export function getPost(slug) {
     return prisma.post.findFirst({
@@ -9,6 +12,10 @@ export function getPost(slug) {
             slug
         }
     })
+}
+
+export function generateStaticParams() {
+  return [];
 }
 
 export async function generateMetadata({params}) {

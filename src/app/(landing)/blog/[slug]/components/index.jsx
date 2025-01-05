@@ -1,12 +1,23 @@
+'use client'
+
 import ContactForm from '@/components/contactForm';
-import Aside from '../home/aside';
-import Header from '../home/header';
+import Aside from '@/components/blog/home/aside';
+import Header from '@/components/blog/home/header';
 //import Recommended from '@/components/client/home/recommended';
 import Content from './content';
+import { useEffect, useState } from 'react';
+import { setView } from '../actions';
 
 export default function Article({post}) {
-  //const ogTitle =  `${post.title} | ${blog.title}`;
-  //const url = `https://${blog.customDomain || `${blog.subdomain}.lettercms.vercel.app`}/${post.url}`;
+  const [canSend, setCanSend] = useState(false);
+
+  useEffect(() => {
+    if (!canSend) {
+      setCanSend(true);
+    } else {
+      setView(post.id);
+    }
+  }, [post.id, canSend]);
 
   return <div>
     <Header title={post.title} description={post.description} thumbnail={post.thumbnail} breadcrumbs/>
@@ -28,8 +39,6 @@ export default function Article({post}) {
       <div className='p-4 w-full md:w-1/3 md:max-w-md'>
         <Aside/>
       </div>
-
-      
       <div className='bg-main-1 w-full py-32'>
         <h4 className='text-white text-4xl my-8 text-center'>Consigue soluciones digitales para el <span className='text-accent-1'>crecimiento de tu negocio</span></h4>
         <div className='bg-white rounded-lg  max-w-md m-auto px-4 py-8'>

@@ -4,7 +4,7 @@ import {useState} from 'react';
 import {useRouter} from 'next/navigation';
 import Link from 'next/link';
 import {FaComments, FaShare} from 'react-icons/fa';
-import ShareButtons from '../shareButtons';
+import ShareButtons from '../../../../../components/blog/shareButtons';
 
 export default function RecommendCard({title, description, thumbnail, url, author, tags, comments}) {
   const [showShare, setShowShare] = useState(false);

@@ -5,12 +5,15 @@ import Pricing from "@/components/home/pricing";
 import Problem from "@/components/home/problem";
 import Transform from "@/components/home/transform";
 
+const title = 'Marketing y transformación digital - David\'s Devel';
+const description = 'Diseñador de soluciones digitales, desarrollo web y marketing inbound';
+
 export const metadata = {
-    title: 'Marketing y transformación digital - David\'s Devel',
-    description: 'The React Framework for the Web',
+    title,
+    description,
     openGraph: {
-        title: 'Marketing y transformación digital - David\'s Devel',
-        description: 'The React Framework for the Web',
+        title,
+        description,
         url: 'https://www.davidsdevel.site'
     }
 }

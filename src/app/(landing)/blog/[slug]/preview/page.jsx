@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import Article from "@/components/blog/article"
+import Article from "app/(landing)/blog/[slug]/components"
 import prisma from "@/lib/prisma";
 import { getServerSession } from "next-auth";
 import authOptions from "app/auth";
