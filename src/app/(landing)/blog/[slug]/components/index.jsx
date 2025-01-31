@@ -6,16 +6,20 @@ import Header from '@/components/blog/home/header';
 //import Recommended from '@/components/client/home/recommended';
 import Content from './content';
 import { useEffect, useState } from 'react';
-import { setView } from '../actions';
 
-export default function Article({post}) {
+export default function Article({post, secret, lettercmsEndpoint}) {
   const [canSend, setCanSend] = useState(false);
 
   useEffect(() => {
     if (!canSend) {
       setCanSend(true);
     } else {
-      setView(post.id);
+      fetch(`${lettercmsEndpoint}/views/${post.slug}`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${secret}`
+        }
+      })
     }
   }, [post.id, canSend]);
 

@@ -1,17 +1,13 @@
 import { notFound } from "next/navigation";
 import Article from "./components/index"
-import prisma from "@/lib/prisma";
+import request from "@/lib/cms/request";
+import jwt from 'jsonwebtoken';
 
 export const dynamic = "force-static";
 export const dynamicParams = true;
 
 export function getPost(slug) {
-    return prisma.post.findFirst({
-        where: {
-            status: 'PUBLISHED',
-            slug
-        }
-    })
+    return request(`/posts/${slug}?status=PUBLISHED`);
 }
 
 export function generateStaticParams() {
@@ -65,5 +61,7 @@ export default async function Page({params}) {
     if (!data)
         return notFound();
 
-    return <Article post={data}/>
+    const secret = jwt.sign({blog: process.env.LETTERCMS_BLOG_ID}, process.env.LETTERCMS_SECRET, {expiresIn: '1h'})
+
+    return <Article post={data} secret={secret} lettercmsEndpoint={process.env.LETTERCMS_API}/>
 }

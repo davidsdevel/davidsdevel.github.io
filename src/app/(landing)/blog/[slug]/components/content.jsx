@@ -1,4 +1,4 @@
-import ArticleStyles from 'app/admin/dashboard/[id]/components/styles';
+import ArticleStyles from './styles';
 import {getGMTDate} from '@/lib/date';
 
 export default function Content({html, published, updated}) {

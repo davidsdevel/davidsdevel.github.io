@@ -4,23 +4,21 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 async function main() {
-	const post = await prisma.post.create({
-		data: {
-			views: 0,
-			title: 'Demo Post',
-			content: '<h1>This is a demo post</h1>',
-		}
-	});
-
-    const link = await prisma.url.create({
+    await prisma.url.create({
         data: {
-            name: 'Google',
+            name: 'Whatsapp',
             url: 'https://www.google.com',
-            slug: 'google'
+            slug: 'whatsapp'
         }
     });
 
-	console.log({ post, link });
+	await prisma.url.create({
+        data: {
+            name: 'Discord',
+            url: 'https://www.google.com',
+            slug: 'discord'
+        }
+    });
 }
 
 // execute the main function

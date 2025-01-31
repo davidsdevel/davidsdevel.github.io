@@ -8,35 +8,10 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
-
 model Url {
   id        Int  @id @default(autoincrement())
   name      String
   slug      String @unique
   url       String
   clicks    Int     @default(0)
-}
-
-
-model Post {
-  id                  String     @unique @default(cuid())
-  title               String?
-  description         String?
-  tags                String[]
-  category            String?
-  content             String?
-  previewContent      String?
-  created             DateTime    @default(now())
-  published           DateTime?
-  updated             DateTime?
-  status              PostStatus  @default(DRAFTED)
-  images              String[]
-  thumbnail           String?
-  slug                String?
-  views               Int
-}
-
-enum PostStatus {
-  PUBLISHED
-  DRAFTED
 }
