@@ -4,49 +4,49 @@ export default function Description() {
   return <div className="flex z-10 flex-col text-center mt-12 w-full bg-lettercms-1">
     <div className='text-white'>
       <div className="text-4xl font-bold">
-        CREATE
+        CREA
       </div>
         <h3 className='mt-2 mb-8'>
-          Create the best content for your users with tools made for you
+          Crea el mejor contenido para tus usuarios con herramientas dise&ntilde;adas para ti
         </h3>
     </div> 
     <div className="flex flex-col py-8 bg-lettercms-1 z-10 items-center md:flex-row">
       <Container className='bg-white md:mx-4'>
         <div className='justify-center flex'>
-          <img className="w-full" src='/illustrations/5.svg' alt="alternative"/>
+          <img className="w-full" src='/illustrations/5.svg' alt="Editores WYSIWYG"/>
         </div>
         <div className="card-body">
           <h4 className="my-8 font-bold text-2xl text-gray-400">
-            WYSIWYG Editors
+            Editores WYSIWYG
           </h4>
           <p className='mb-8 px-2'>
-            Create your entries and pages faster with our editors which makes easier this task for you. Drag, drop and create
+            Crea tus entradas y p&aacute;ginas m&aacute;s r&aacute;pido con nuestros editores que facilitan esta tarea. Arrastra, suelta y crea
           </p>
         </div>
       </Container>
       <Container className='bg-white md:mx-4'>
         <div className='justify-center flex'>
-          <img className="w-full" src='/illustrations/109.svg' alt="alternative"/>
+          <img className="w-full" src='/illustrations/109.svg' alt="Pruebas A/B"/>
         </div>
         <div className="card-body">
           <h4 className="my-8 font-bold text-2xl text-gray-400">
-            Split tests
+            Pruebas divididas
           </h4>
           <p className='mb-8 px-2'>
-            Test and offer the best version of your content in a simple way and without external tools
+            Prueba y ofrece la mejor versi&oacute;n de tu contenido de forma sencilla y sin herramientas externas
           </p>
         </div>
       </Container>
       <Container className='bg-white md:mx-4'>
         <div className='justify-center flex'>
-          <img className="w-full" src='/illustrations/125.svg' alt="alternative"/>
+          <img className="w-full" src='/illustrations/125.svg' alt="Colaboradores"/>
         </div>
         <div className="card-body">
           <h4 className="my-8 font-bold text-2xl text-gray-400">
-            Collaborators
+            Colaboradores
           </h4>
           <p className='mb-8 px-2'>
-            Keep your team united and optimize your content creation. Avoid delayments when delivering your content
+            Mant&eacute;n tu equipo unido y optimiza la creaci&oacute;n de tu contenido. Evita retrasos al entregar tu contenido
           </p>
         </div>
       </Container>

@@ -9,12 +9,10 @@ export default function Header() {
             <span>Deleita</span>
           </h1>
           <h2 className='px-4 mt-8 mb-16 text-gray-500'>
-            {/*translation['Use LetterCMS to attract new users and offer them the best content based on their tastes']*/}
             Usa LetterCMS para atraer nuevos usuarios y ofrecerles el mejor contenido basado en sus gustos
           </h2>
           <div className='flex gap-2 justify-center items-center'>
             <a className='no-underline border border-lettercms-1 bg-lettercms-1 text-white rounded-full py-3 px-6' href='https://lettercms.davidsdevel.com/signup'>
-              {/*<FormattedMessage id="REGISTER"/>*/}
               Crear blog
             </a>
             {/*
@@ -26,7 +24,7 @@ export default function Header() {
           </div>
         </div>
         <div className="w-full mt-8 className='md:w-1/4'">
-          <img src='/illustrations/99.svg' alt="alternative"/>
+          <img src='/illustrations/99.svg' alt="Ilustraci&oacute;n LetterCMS"/>
         </div> 
       </div> 
     </header>

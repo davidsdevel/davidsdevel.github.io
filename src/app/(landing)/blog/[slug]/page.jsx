@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import Article from "./components/index"
+import Article from "../_components/article"
 import request from "@/lib/cms/request";
 
 export const dynamic = "force-static";

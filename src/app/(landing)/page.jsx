@@ -1,9 +1,9 @@
-import Benefits from "@/components/home/benefits";
-import CallToAction from "@/components/home/callToAction";
-import MarketingHeader from "@/components/home/header";
-import Pricing from "@/components/home/pricing";
-import Problem from "@/components/home/problem";
-import Transform from "@/components/home/transform";
+import Benefits from "@/app/(landing)/_components/home/benefits";
+import CallToAction from "@/app/(landing)/_components/home/callToAction";
+import MarketingHeader from "@/app/(landing)/_components/home/header";
+import Pricing from "@/app/(landing)/_components/home/pricing";
+import Problem from "@/app/(landing)/_components/home/problem";
+import Transform from "@/app/(landing)/_components/home/transform";
 
 const title = 'Marketing y transformación digital - David\'s Devel';
 const description = 'Diseñador de soluciones digitales, desarrollo web y marketing inbound';

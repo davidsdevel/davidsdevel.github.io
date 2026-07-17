@@ -3,9 +3,8 @@
     "jsx": "react",
     "baseUrl": "./src",
     "paths": {
-      "@/components/*": ["components/*"],
-      "@/lib/*": ["lib/*"],
-      "@/styles/*": ["styles/*"]
+      "@/app/*": ["app/*"],
+      "@/lib/*": ["lib/*"]
     }
   }
 }

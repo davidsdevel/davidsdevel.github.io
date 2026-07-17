@@ -1,5 +1,5 @@
-import Nav from '@/components/nav';
-import Footer from '@/components/footer';
+import Nav from '@/app/(landing)/_components/layout/nav';
+import Footer from '@/app/(landing)/_components/layout/footer';
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 export default function RootLayout({children}) {

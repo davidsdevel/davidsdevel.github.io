@@ -1,4 +1,4 @@
-import Blog from "@/components/blog/home"
+import Blog from "@/app/(landing)/blog/_components/home"
 import request from "@/lib/cms/request";
 
 export const metadata = {

@@ -6,21 +6,21 @@ export default function CallToAction() {
     <div id="details" className="bg-slate-50 py-12">
       <Container className='bg-white m-auto flex flex-col items-center'>
         <div className="text-center max-w-2xl">
-          <img className="max-w-md m-auto w-full" src='/illustrations/489.svg' alt="alternative"/>
-          <h3 className='mt-8 font-bold text-2xl text-lettercms-1'>It&apos;s time to improve your content creation</h3>
-          <p className='my-12'>Our goal is for you to grow and deliver your content in the best possible way. With LetterCMS you won&apos;t have to add plugins or use external tools, we offer everything in one place.</p>
+          <img className="max-w-md m-auto w-full" src='/illustrations/489.svg' alt="Mejora tu creaci&oacute;n de contenido"/>
+          <h3 className='mt-8 font-bold text-2xl text-lettercms-1'>Es hora de mejorar tu creaci&oacute;n de contenido</h3>
+          <p className='my-12'>Nuestro objetivo es que crezcas y entregues tu contenido de la mejor manera posible. Con LetterCMS no tendr&aacute;s que a&ntilde;adir plugins ni usar herramientas externas, ofrecemos todo en un solo lugar.</p>
           <ul className='mb-12'>
             <li className="flex text-left items-center gap-2">
               <FaSquare className='text-lettercms-1 w-2 h-2'/>
-              <div>Attract new readers and offer them quality</div>
+              <div>Atrae nuevos lectores y ofr&eacute;celes calidad</div>
             </li>
             <li className="flex text-left items-center gap-2">
               <FaSquare className='text-lettercms-1 w-2 h-2'/>
-              <div>Create and collab more efficiently</div>
+              <div>Crea y colabora de manera m&aacute;s eficiente</div>
             </li>
           </ul>
           <a className='no-underline bg-lettercms-1 text-white rounded-full py-3 px-6' href='https://lettercms.davidsdevel.com/signup'>
-            REGISTER
+            Registrarse
           </a>
         </div>
       </Container>

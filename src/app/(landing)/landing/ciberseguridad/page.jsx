@@ -1,4 +1,4 @@
-import Comp from './component'
+import Landing from './_components/landing'
 
 export const metadata = {
   title: "Sobrevive al mundo digital: Claves para evitar hackeos",
@@ -7,5 +7,5 @@ export const metadata = {
 }
 
 export default function Page() {
-  return <Comp/>
+  return <Landing/>
 }

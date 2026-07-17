@@ -1,9 +1,9 @@
-import Header from './components/header';
-import About from './components/about';
-import Skills from './components/skills';
-import Portfolio from './components/portfolio';
-import Collab from './components/collab';
-import Contact from './components/contact';
+import Header from './_components/header';
+import About from './_components/about';
+import Skills from './_components/skills';
+import Portfolio from './_components/portfolio';
+import Collab from './_components/collab';
+import Contact from './_components/contact';
 
 export const metadata = {
     title: 'Acerca de mi - David\'s Devel',

@@ -2,9 +2,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './global.css';
 
-const title = 'Narrate - Notion Style Blogging Platform for SaaS Founders';
-const description = 'Easily create Notion-style blogs optimized for SEO and audience engagement.';
-const keywords = ['Next.js 14 SEO', 'Notion Styled Blogs', 'Notion to Blogs', 'Narrate blog', 'SEO tips', 'AI blogging'];
+const title = "David's Devel - Desarrollador Full Stack & Marketing Digital";
+const description = 'Desarrollador Full Stack e Inbound Marketer. Soluciones digitales para el crecimiento de tu negocio.';
 
 export const metadata = {
   
@@ -12,7 +11,6 @@ export const metadata = {
   title,
   description,
   icons: ['https://www.davidsdevel.com/favicon.ico'],
-  keywords,
   openGraph: {
     title,
     description,
@@ -40,17 +38,10 @@ export const metadata = {
     admins: '12345678',
   },
   category: 'marketing'
-
-  //referrer: 'origin-when-cross-origin',
-  //formatDetection: {
-  //  email: false,
-  //  address: false,
-  //  telephone: false,
-  //}
 }
 
 export default function RootLayout({children}) {
-  return <html lang="en">
+  return <html lang="es">
     <body>
       <main>{children}</main>
       <ToastContainer
