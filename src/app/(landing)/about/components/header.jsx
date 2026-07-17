@@ -1,4 +1,5 @@
 import { socialMedia } from "@/lib/config"
+import Certifications from "./certifications"
 
 export default function Header() {
   return <header className="">

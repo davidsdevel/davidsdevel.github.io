@@ -12,12 +12,12 @@ export const metadata = {
     openGraph: {
         title,
         description,
-        url: 'https://www.davidsdevel.site/services/lettercms'
+        url: 'https://www.davidsdevel.com/services/lettercms'
     }
 }
 
 export default function Page() {
-    return <main className='bg-main-1'>
+    return <main className='bg-lettercms-1'>
         <Header/>
         <Description/>
         <Features/>

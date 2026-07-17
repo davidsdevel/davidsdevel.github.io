@@ -7,19 +7,27 @@ import Header from '@/components/blog/home/header';
 import Content from './content';
 import { useEffect, useState } from 'react';
 
-export default function Article({post, secret, lettercmsEndpoint}) {
+export default function Article({post}) {
   const [canSend, setCanSend] = useState(false);
 
   useEffect(() => {
     if (!canSend) {
       setCanSend(true);
     } else {
-      fetch(`${lettercmsEndpoint}/views/${post.slug}`, {
+      fetch('/api/token', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${secret}`
-        }
+          'Content-Type': 'application/json'
+        },
+        body: '{}'
       })
+        .then(res => res.json())
+        .then(({endpoint, secret}) => {
+          fetch(`${endpoint}/v1/views/${post.slug}`, {
+            method: 'POST',
+            headers: {'Authorization': `Bearer ${secret}`}
+          })
+        })
     }
   }, [post.id, canSend]);
 

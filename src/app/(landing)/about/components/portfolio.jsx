@@ -14,9 +14,9 @@ const projects = [
     url: 'https://lakar.davidsdevel.site'
   },
   {
-    title: 'Content Management System (Still in Development)',
+    title: 'Content Management System',
     img: '/images/portfolio/lettercms.webp',
-    url: 'https://lettercms.vercel.app'
+    url: 'https://lettercms.lavozdeoieniv.com'
   },
   {
     title: 'Radio Station Landing Page',

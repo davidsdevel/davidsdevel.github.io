@@ -6,7 +6,7 @@ const Head = (props) => {
       <meta content='article' property='og:type'/>
       <meta name="author" content="David González"/>
       <meta property='article:author' content='https://www.facebook.com/David.ImpulseWD' />
-      <meta property='article:publisher' content='https://www.facebook.com/davidsdevel' />
+      <meta property='article:publisher' content='https://www.facebook.com/davidsdevel.oficial' />
 
       {
         !!props.category &&

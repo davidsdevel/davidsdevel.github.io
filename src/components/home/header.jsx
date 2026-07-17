@@ -2,7 +2,7 @@ import ContactForm from "@/components/contactForm";
 
 export default function MarketingHeader() {
     return <header className="bg-main-1 p-4 sm:px-12 md:px-24 md:py-48">
-        <div className="w-full flex flex-col md:flex-row md:justify-between md:items-center">
+        <div className="w-full flex flex-col m-auto md:flex-row md:justify-between md:items-center lg:max-w-7xl">
             <div className="text-white text-center py-36 md:text-left md:max-w-3xl">
                 <h1 className="font-bold text-6xl md:text-7xl"><span className="text-accent-1">Aumenta el valor</span> de tu negocio</h1>
                 <div className="py-12">

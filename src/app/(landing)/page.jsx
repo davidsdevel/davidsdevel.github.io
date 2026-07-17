@@ -14,7 +14,7 @@ export const metadata = {
     openGraph: {
         title,
         description,
-        url: 'https://www.davidsdevel.site'
+        url: 'https://www.davidsdevel.com'
     }
 }
 

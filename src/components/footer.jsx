@@ -1,5 +1,8 @@
+'use client'
+
 import { socialMedia } from "@/lib/config";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const links = [
   {
@@ -26,7 +29,11 @@ const servicesLinks = [
 export default function Footer() {
   const date = new Date();
 
-  return <footer id="footer-copyright" className='bg-black-3 px-12 py-16 w-full text-white flex flex-col md:flex-row'>
+  const path = usePathname();
+
+  const isLetterCMS = path.includes('/services/lettercms');
+
+  return <footer id="footer-copyright" className={`${isLetterCMS ? 'bg-lettercms-1' : 'bg-black-3'} px-12 py-16 w-full text-white flex flex-col md:flex-row gap-12 md:px-20 md:py-24 lg:py-36 lg:px-30`}>
     <div className="flex-grow felx flex-col items-start">
       <h5 className="text-2xl mb-8">Enlaces de interes</h5>
       <ul className="flex flex-col gap-2 items-start">
@@ -39,7 +46,7 @@ export default function Footer() {
         }
       </ul>
     </div>
-    <div className="flex-grow felx flex-col items-start">
+    <div className="flex-grow flex flex-col items-start">
       <h5 className="text-2xl mb-8">Servicios</h5>
       <ul className="flex flex-col gap-2 items-start">
         {

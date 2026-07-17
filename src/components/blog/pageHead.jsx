@@ -56,8 +56,8 @@ const PageHead = (props) => {
         "@type":"Developer",
         "url":"${props.origin}",
         "sameAs":[
-          "https://www.facebook.com/davidsdevel/",
-          "https://www.instagram.com/davidsdevel/",
+          "https://www.facebook.com/davidsdevel.oficial/",
+          "https://www.instagram.com/davidsdevel.oficial/",
           "https://es.linkedin.com/in/davidsdevel",
           "https://www.youtube.com/user/davidsdevel",
           "https://twitter.com/davidsdevel"

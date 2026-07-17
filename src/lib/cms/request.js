@@ -5,7 +5,7 @@ export default async function request(path) {
         blog: process.env.LETTERCMS_BLOG_ID
     }, process.env.LETTERCMS_SECRET);
 
-    const response = await fetch(`${process.env.LETTERCMS_API}${path}`, {
+    const response = await fetch(`${process.env.LETTERCMS_API}/v1${path}`, {
         headers: {
             authorization: `Bearer ${token}`
         }

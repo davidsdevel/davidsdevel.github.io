@@ -5,6 +5,9 @@ import { sendContactMessage } from '../actions';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { sendGAEvent } from '@next/third-parties/google'
+import { z } from "zod/v4";
+
+const EmailSchema = z.email()
 
 export default function ContactForm({defaultMessage = '', buttonText = 'Enviar', eventForm = ''}) {
   const [name, setName] = useState('');
@@ -23,6 +26,11 @@ export default function ContactForm({defaultMessage = '', buttonText = 'Enviar',
 
     if (!email)
       return toast.info('El correo es requerido');
+
+    const parseEmail = EmailSchema.safeParse(email);
+
+    if (!parseEmail.success)
+      return toast.info('El correo no es válido');
 
     if (!message)
       return toast.info('El mensaje es requerido');

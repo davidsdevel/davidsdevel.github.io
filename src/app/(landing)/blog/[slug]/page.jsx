@@ -1,23 +1,18 @@
 import { notFound } from "next/navigation";
 import Article from "./components/index"
 import request from "@/lib/cms/request";
-import jwt from 'jsonwebtoken';
 
 export const dynamic = "force-static";
 export const dynamicParams = true;
-
-export function getPost(slug) {
-    return request(`/posts/${slug}?status=PUBLISHED`);
-}
 
 export function generateStaticParams() {
   return [];
 }
 
 export async function generateMetadata({params}) {
-    const {slug} = params;
+    const {slug} = await params;
 
-    const data = await getPost(slug);
+    const data = await request(`/posts/${slug}?status=PUBLISHED&select=title,description,thumbnail,tags,published,updated`);
 
     if (!data)
         return notFound();
@@ -54,14 +49,12 @@ export async function generateMetadata({params}) {
 }
 
 export default async function Page({params}) {
-    const {slug} = params;
+    const {slug} = await params;
 
-    const data = await getPost(slug);
+    const data = await request(`/posts/${slug}?status=PUBLISHED&select=slug,id,title,description,thumbnail,content,published,updated,author,tags,category`);
 
     if (!data)
         return notFound();
 
-    const secret = jwt.sign({blog: process.env.LETTERCMS_BLOG_ID}, process.env.LETTERCMS_SECRET, {expiresIn: '1h'})
-
-    return <Article post={data} secret={secret} lettercmsEndpoint={process.env.LETTERCMS_API}/>
+    return <Article post={data}/>
 }

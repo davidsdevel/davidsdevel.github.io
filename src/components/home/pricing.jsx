@@ -5,7 +5,7 @@ const pricingValues = [
         title: 'Asesorias desde',
         price: <span>
             <span className="text-3xl text-gray-600">$</span>
-            <span className="font-bold text-6xl text-accent-1">5</span>
+            <span className="font-bold text-6xl text-accent-1">10</span>
             <span className='text-lg text-gray-600'>/hora</span>
         </span>,
         description: 'Desde estrategia completa de marketing digital hasta gestión de redes sociales',
@@ -16,11 +16,8 @@ const pricingValues = [
         ]
     },
     {
-        title: 'Sitios web desde',
-        price: <span>
-            <span className="text-3xl text-gray-600">$</span>
-            <span className="font-bold text-6xl text-accent-1">50</span>
-        </span>,
+        title: 'Sitios web',
+        price: <span className='text-2xl text-accent-1 font-bold'>Según los requerimentos</span>,
         description: 'Desarrollo web a medida ofreciendo soluciones únicas para tus necesidades específicas.',
         items: [
             'Sitio web statico',

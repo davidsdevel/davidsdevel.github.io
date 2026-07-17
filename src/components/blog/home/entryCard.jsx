@@ -6,16 +6,20 @@ import Link from 'next/link';
 import {FaComments, FaShare} from 'react-icons/fa';
 import {CiShare1} from 'react-icons/ci';
 import ShareButtons from '../shareButtons';
+import { updateUrlQueries } from '@/lib/stringFormatter';
 
 export default function EntryCard({title, thumbnail, description, author, tags, comments, slug}) {
   const [showShare, setShowShare] = useState(false);
   const router = useRouter();
 
+  const thumbnailUrl = updateUrlQueries(thumbnail, {h: '200', q: '80'});
+  const profilePictureUrl = updateUrlQueries(author.profilePicture, {h: '50', q: '60'});
+
   return <div className='flex flex-col my-16 md:w-3/4 lg:w-full lg:flex-row-reverse relative gap-2'>
     <div className='flex flex-col lg:w-2/3'>
       <div className='flex flex-col'>
         <Link href={`/blog/${slug}`}>
-          <div className='w-full h-32 lg:h-48 bg-cover bg-center rounded-lg mb-4 hover:bg-[110%]' style={{backgroundImage: `url(${thumbnail}&h=200&q=50)`}}/>
+          <div className='w-full h-32 lg:h-48 bg-cover bg-center rounded-lg mb-4 hover:bg-[110%]' style={{backgroundImage: `url(${thumbnailUrl})`}}/>
         </Link>
         <h3 className='px-1 text-lg text-main-1 font-bold'>{title}</h3>
       </div>
@@ -34,9 +38,9 @@ export default function EntryCard({title, thumbnail, description, author, tags, 
           <span className='ml-2'>0</span>
         </div>
         <div className='flex flex-row-reverse items-end lg:px-4 lg:items-center'>
-          <div className='w-12 h-12 bg-cover bg-center rounded-full shrink-0' style={{backgroundImage: `url(https://lh3.googleusercontent.com/a/ACg8ocKYulmo-gd2aUozfyhlRlkRS8sNK6aiyv4DOuNImTTLt0sifvU=s96-c?size=50)`}}/>
+          <div className='w-12 h-12 bg-cover bg-center rounded-full shrink-0' style={{backgroundImage: `url(${profilePictureUrl})`}}/>
           {/*<h4 className='mx-2 text-sm'>{author?.name} {author?.lastname}</h4>*/}
-          <h4 className='mx-2 text-sm'>David Gonzalez</h4>
+          <h4 className='mx-2 text-sm'>{author.name} {author.lastname}</h4>
         </div>
       </div>
       <ul className='flex flex-wrap'>

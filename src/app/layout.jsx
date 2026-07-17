@@ -8,10 +8,10 @@ const keywords = ['Next.js 14 SEO', 'Notion Styled Blogs', 'Notion to Blogs', 'N
 
 export const metadata = {
   
-  metadataBase: new URL('https://www.davidsdevel.site'),
+  metadataBase: new URL('https://www.davidsdevel.com'),
   title,
   description,
-  icons: ['https://www.davidsdevel.site/favicon.ico'],
+  icons: ['https://www.davidsdevel.com/favicon.ico'],
   keywords,
   openGraph: {
     title,
@@ -29,7 +29,7 @@ export const metadata = {
   authors: [
     {
       name: "David's Devel",
-      url: 'https://www.davidsdevel.site/about'
+      url: 'https://www.davidsdevel.com/about'
     }
   ],
   generator: 'Next.js',

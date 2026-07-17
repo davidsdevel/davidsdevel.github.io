@@ -3,22 +3,22 @@ export default function Header() {
     <header id="header" className="text-center bg-white md:py-16">
       <div className="flex flex-col items-center md:flex-row">
         <div className='md:w-3/4'>
-          <h1 className='flex flex-col text-main-1 mt-24 text-6xl font-bold font-rubik'>
+          <h1 className='flex flex-col text-lettercms-1 mt-24 text-6xl font-bold font-rubik'>
             <span>Crea</span>
             <span>Atrae</span>
             <span>Deleita</span>
           </h1>
           <h2 className='px-4 mt-8 mb-16 text-gray-500'>
             {/*translation['Use LetterCMS to attract new users and offer them the best content based on their tastes']*/}
-            Use LetterCMS to attract new users and offer them the best content based on their tastes
+            Usa LetterCMS para atraer nuevos usuarios y ofrecerles el mejor contenido basado en sus gustos
           </h2>
           <div className='flex gap-2 justify-center items-center'>
-            <a className='no-underline border border-accent-1 bg-accent-1 text-white rounded-full py-3 px-6' href='https://lettercms.davidsdevel.site/signup'>
+            <a className='no-underline border border-lettercms-1 bg-lettercms-1 text-white rounded-full py-3 px-6' href='https://lettercms.davidsdevel.com/signup'>
               {/*<FormattedMessage id="REGISTER"/>*/}
-              Create blog
+              Crear blog
             </a>
             {/*
-              <a className='no-underline border border-accent-1 text-accent-1 rounded-full py-3 px-6' href='/docs'>
+              <a className='no-underline border border-lettercms-1 text-lettercms-1 rounded-full py-3 px-6' href='/docs'>
                 {/*<FormattedMessage id="REGISTER"/>
                 Docs
               </a>

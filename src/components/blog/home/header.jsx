@@ -11,6 +11,7 @@ export default function Header({title, description, thumbnail, main}) {
         flex-col
         py-32
         md:py-44
+        lg:py-80
       '
     >
       <div className='text-white grid grid-cols-1 justify-center w-full h-full gap-12 px-4 md:grid-cols-2 sm:px-16 md:px-24'>

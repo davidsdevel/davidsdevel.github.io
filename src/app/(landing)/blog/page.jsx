@@ -5,9 +5,11 @@ export const metadata = {
     title: 'Entradas - David\'s Devel'
 }
 
-export default async function Page({searchParams: {page = '1'}}) {
-    const {data} = await request(`/posts?status=PUBLISHED&page=${page}`);
-    
+export default async function Page({searchParams}) {
+    const {page = '1'} = await searchParams;
+
+    const {data} = await request(`/posts?status=PUBLISHED&page=${page}&select=id,title,thumbnail,description,author,tags,slug`);
+
     //const [data] = await prisma.post.paginate({
     //    where: {
     //        status: 'PUBLISHED'
@@ -20,7 +22,13 @@ export default async function Page({searchParams: {page = '1'}}) {
     //    limit: 10,
     //    page: +page
     //});
+    const posts = data
+        ? data.map(e => {
+            delete e.author.password;
+            
+            return e;
+        })
+        : []
 
-    return <Blog posts={data}/>
+    return <Blog posts={posts}/>
 }
-
