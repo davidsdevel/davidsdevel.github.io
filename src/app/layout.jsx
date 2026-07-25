@@ -34,7 +34,6 @@ export const metadata = {
   generator: 'Next.js',
   creator: "David's Devel",
   publisher: "David's Devel",
-  
   category: 'marketing'
 }
 
