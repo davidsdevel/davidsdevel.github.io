@@ -4,16 +4,20 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 async function main() {
-    await prisma.url.create({
-        data: {
+    await prisma.url.upsert({
+        where: { slug: 'whatsapp' },
+        update: {},
+        create: {
             name: 'Whatsapp',
             url: 'https://www.google.com',
             slug: 'whatsapp'
         }
     });
 
-	await prisma.url.create({
-        data: {
+	await prisma.url.upsert({
+        where: { slug: 'discord' },
+        update: {},
+        create: {
             name: 'Discord',
             url: 'https://www.google.com',
             slug: 'discord'

@@ -5,7 +5,7 @@ const message = encodeURI('Hola, encontré su contacto a través de su sitio web
 const phoneNumber = process.env.WHATSAPP_NUMBER;
 
 export const GET = async () => {
-    const headerList = headers();
+    const headerList = await headers();
     const mobile = headerList.get('sec-ch-ua-mobile');
 
     const isMobile = mobile === '?1';

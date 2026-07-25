@@ -3,7 +3,7 @@ import {socialMedia} from '@/lib/config'
 export default function Aside() {
   return <aside className='flex flex-col w-full border border-gray-500 bg-slate-50 py-8 items-center rounded-lg h-fit pb-24'>
     <div className='flex flex-col items-center' >
-      <img src='https://lettercms-api.davidsdevel.com/images/profile-pictures/cmrlk9cdi000028syf0zfa38f?w=160&h=160&q=80' className='rounded-full w-40 h-40'/>
+      <img src='https://lettercms-api.davidsdevel.com/images/profile-pictures/cmrlk9cdi000028syf0zfa38f?w=160&h=160&q=80' alt='David Gonzalez - Perfil' className='rounded-full w-40 h-40' loading="lazy"/>
       <div className='mt-4 mb-2'>
         <span className='font-bold text-sm text-main-700'>David Gonzalez</span>
       </div>

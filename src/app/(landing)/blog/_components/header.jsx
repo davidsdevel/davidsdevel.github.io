@@ -23,7 +23,7 @@ export default function Header({title, description, thumbnail, main}) {
                   <h2 className='w-full text-xl mt-8'>{description}</h2>
                 </div>
                 <div className='flex-grow w-full px-2'>
-                  <img src={thumbnail} className='rounded-xl' alt={title}/>
+                  <img src={thumbnail} className='rounded-xl' alt={title} loading="lazy"/>
                 </div>
               </>
             : <div className='flex flex-col justify-center col-span-2 text-center m-auto sm:w-4/5 md:w-2/3'>

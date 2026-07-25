@@ -1,3 +1,4 @@
+import '@/lib/env';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './global.css';
@@ -34,16 +35,13 @@ export const metadata = {
   creator: "David's Devel",
   publisher: "David's Devel",
   
-  facebook: {
-    admins: '12345678',
-  },
   category: 'marketing'
 }
 
 export default function RootLayout({children}) {
   return <html lang="es">
     <body>
-      <main>{children}</main>
+      {children}
       <ToastContainer
         position="bottom-right"
         autoClose={5000}

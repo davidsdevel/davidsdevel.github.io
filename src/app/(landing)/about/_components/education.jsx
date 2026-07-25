@@ -38,37 +38,29 @@ const education = [
 ]
 
 function EducationCard({uni, location, since, until, grade, title, description}) {
-  return <div className="col-sm-4">
-    <div className="single-horizontal-timeline">
-      <div className="experience-time">
-        <h2>{since} - {until}</h2>
-        <h3>{grade} <span>en </span> {title}</h3>
+  return <div className="w-full md:w-1/3 p-4">
+    <div className="border-l-2 border-main-1 pl-4 py-4">
+      <div className="mb-2">
+        <h2 className="text-lg font-bold text-main-1">{since} - {until}</h2>
+        <h3 className="text-md font-semibold">{grade} en {title}</h3>
       </div>
-      <div className="timeline-horizontal-border">
-        <i className="fa fa-circle" aria-hidden="true"></i>
-        <span className="single-timeline-horizontal"></span>
-      </div>
-      <div className="timeline">
-        <div className="timeline-content">
-          <h4 className="title">{uni}</h4>
-          <h5>{location}</h5>
-          <p className="description">{description}</p>
-        </div>
+      <div className="border-l-2 border-main-500 pl-4">
+        <h4 className="font-bold text-accent-1">{uni}</h4>
+        <h5 className="text-sm text-gray-500">{location}</h5>
+        <p className="text-sm text-gray-600 mt-2">{description}</p>
       </div>
     </div>
   </div>
 }
 
 export default function Education() {
-  return <section id="education" className="education">
-    <div className="section-heading text-center">
-      <h2>Educaci&oacute;n</h2>
+  return <section id="education" className="py-12">
+    <div className="text-center mb-8">
+      <h2 className="text-3xl font-bold text-main-1">Educaci&oacute;n</h2>
     </div>
-    <div className="container">
-      <div className="education-horizontal-timeline">
-        <div className="row">
-          {education.map(e => <EducationCard key={e.location + e.title} {...e}/>)}
-        </div>
+    <div className="max-w-6xl mx-auto">
+      <div className="flex flex-wrap">
+        {education.map(e => <EducationCard key={e.location + e.title} {...e}/>)}
       </div>
     </div>
   </section>

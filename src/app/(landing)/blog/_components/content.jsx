@@ -1,5 +1,6 @@
 import ArticleStyles from './styles';
 import {getGMTDate} from '@/lib/date';
+import {sanitizeHtml} from '@/lib/sanitize';
 
 export default function Content({html, published, updated}) {
   return <div className='w-full container flex flex-col mb-12 max-w-4xl m-auto'>
@@ -12,7 +13,7 @@ export default function Content({html, published, updated}) {
     </div>
     <main
       className='ck-content mx-[2.5%] m-auto'
-      dangerouslySetInnerHTML={{__html: html}}
+      dangerouslySetInnerHTML={{__html: sanitizeHtml(html)}}
     />
     <ArticleStyles/>
   </div>;

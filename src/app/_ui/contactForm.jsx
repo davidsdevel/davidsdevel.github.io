@@ -1,7 +1,7 @@
 'use client'
 
 import Input from '@/app/_ui/input';
-import { sendContactMessage } from '@/lib/slack/webhook';
+import { sendContactMessage } from '@/lib/telegram/webhook';
 import { validateEmail } from '@/lib/validation';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
@@ -20,6 +20,8 @@ export default function ContactForm({defaultMessage = '', buttonText = 'Enviar',
 
     if (isLoading)
       return;
+
+    setIsLoading(true);
 
     const emailValidation = validateEmail(email);
     if (!emailValidation.valid)
@@ -43,8 +45,6 @@ export default function ContactForm({defaultMessage = '', buttonText = 'Enviar',
     }
 
     const messagePromise = async () => {
-      setIsLoading(true)
-
       try {
         const {status} = await sendContactMessage(name, email, message);
         
@@ -78,6 +78,6 @@ export default function ContactForm({defaultMessage = '', buttonText = 'Enviar',
       {!isEbook && <Input label='Nombre' placeholder='Juan Perez' onChange={({target: {value}}) => setName(value)} value={name}/>}
       <Input label='Correo' type='email' placeholder='juan@domain.com' onChange={({target: {value}}) => setEmail(value)} value={email}/>
       {!isEbook && <Input className='h-40 resize-none' label='Mensaje' type='textarea' onChange={({target: {value}}) => setMessage(value)} value={message}/>}
-      <button className='bg-accent-1 text-white w-full py-3 rounded-full' disabled={isLoading}>{buttonText}</button>
+      <button className='bg-accent-1 text-white w-full py-3 rounded-full mt-2' disabled={isLoading}>{buttonText}</button>
   </form>
 }

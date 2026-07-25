@@ -5,14 +5,16 @@ import me from '../me.jpg'
 import Image from "next/image"
 import Button from "@/app/_ui/button"
 import ContactForm from "@/app/_ui/contactForm"
+import FadeIn from "@/app/_ui/fadeIn"
+import StaggerContainer from "@/app/_ui/staggerContainer"
 import { Shield, ShieldCheck, Eye, Wifi, Lock, Mail, KeyRound, Key, AlertCircle, ChevronDown } from "lucide-react"
 
 async function downloadGuide(email) {
-  await fetch('/api/contact', {
+  await fetch('/api/revalidation/contact', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name: 'Anonimo', email, message: 'Descargue el ebook "Sobrevive al mundo digital"' })
-  });
+  }).catch(() => {});
 
   window.open(encodeURI('/ebook/Sobrevive al mundo digital Claves para evitar hackeos.pdf'), '_blank')
 }
@@ -22,23 +24,29 @@ export default function LandingPage() {
     <div className="min-h-screen bg-white text-gray-800">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-main-1 to-main-2 text-white py-48 pb-20 px-4 md:px-8 lg:px-16">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto py-8 md:py-12 lg:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6">
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-                ¿Tu vida digital está segura? Sobrevive al Mundo Digital.
-              </h1>
-              <p className="text-xl md:text-2xl text-blue-100">
-                Descarga esta guía gratuita y aprende las claves esenciales para evitar hackeos y proteger tu
-                información personal en línea.
-              </p>
-              <a href="#download-form">
-                <Button className="bg-accent-1 mt-4 hover:opacity-80 text-white text-lg font-medium transition-all">
-                  ¡Descargar Guía Gratis Ahora!
-                </Button>
-              </a>
+              <FadeIn>
+                <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+                  ¿Tu vida digital está segura? Sobrevive al Mundo Digital.
+                </h1>
+              </FadeIn>
+              <FadeIn delay={0.15}>
+                <p className="text-xl md:text-2xl text-blue-100">
+                  Descarga esta guía gratuita y aprende las claves esenciales para evitar hackeos y proteger tu
+                  información personal en línea.
+                </p>
+              </FadeIn>
+              <FadeIn delay={0.3}>
+                <a href="#download-form">
+                  <Button className="bg-accent-1 mt-4 hover:opacity-80 text-white text-lg font-medium transition-all">
+                    ¡Descargar Guía Gratis Ahora!
+                  </Button>
+                </a>
+              </FadeIn>
             </div>
-            <div className="flex justify-center md:justify-end">
+            <FadeIn direction="right" delay={0.2} className="flex justify-center md:justify-end">
               <div className="relative w-64 h-80 md:w-80 md:h-96 shadow-2xl transform rotate-3 transition-transform hover:rotate-0">
                 <Image
                   src={cover}
@@ -48,7 +56,7 @@ export default function LandingPage() {
                   priority
                 />
               </div>
-            </div>
+            </FadeIn>
           </div>
         </div>
         <div
@@ -60,29 +68,37 @@ export default function LandingPage() {
       {/* Problem/Introduction Section */}
       <section className="py-16 px-4 md:px-8 lg:px-16">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl mb-6 text-main-1">
-            La ciberseguridad es fundamental en un mundo cada vez más digitalizado.
-          </h2>
-          <p className="text-xl text-gray-700 leading-relaxed">
-            Protege tu información personal, financiera y profesional de ataques que pueden comprometer tus datos y tu
-            reputación. Este ebook te enseña cómo hacerlo con pasos sencillos y prácticos.
-          </p>
-          <div className="mt-10 flex justify-center">
-            <a href="#download-form" className="flex items-center text-accent-1 font-medium">
-              <span>Descubre cómo protegerte</span>
-              <ChevronDown className="ml-2 h-5 w-5" />
-            </a>
-          </div>
+          <FadeIn>
+            <h2 className="text-3xl md:text-4xl mb-6 text-main-1">
+              La ciberseguridad es fundamental en un mundo cada vez más digitalizado.
+            </h2>
+          </FadeIn>
+          <FadeIn delay={0.15}>
+            <p className="text-xl text-gray-700 leading-relaxed">
+              Protege tu información personal, financiera y profesional de ataques que pueden comprometer tus datos y tu
+              reputación. Este ebook te enseña cómo hacerlo con pasos sencillos y prácticos.
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.25}>
+            <div className="mt-10 flex justify-center">
+              <a href="#download-form" className="flex items-center text-accent-1 font-medium">
+                <span>Descubre cómo protegerte</span>
+                <ChevronDown className="ml-2 h-5 w-5" />
+              </a>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* What You'll Learn Section */}
       <section className="py-16 px-4 md:px-8 lg:px-16 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl mb-12 text-center text-main-1">
-            Lo que descubrirás en esta guía:
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <FadeIn>
+            <h2 className="text-3xl md:text-4xl mb-12 text-center text-main-1">
+              Lo que descubrirás en esta guía:
+            </h2>
+          </FadeIn>
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 icon: <Shield className="h-10 w-10 text-accent-1" />,
@@ -140,19 +156,21 @@ export default function LandingPage() {
                 </div>
               </div>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* About the Author Section */}
       <section className="py-16 px-4 md:px-8 lg:px-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl mb-12 text-center">Conoce al Autor</h2>
+          <FadeIn>
+            <h2 className="text-3xl md:text-4xl mb-12 text-center">Conoce al Autor</h2>
+          </FadeIn>
           <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="w-48 h-48 relative rounded-full overflow-hidden border-2 border-accent-1 shadow-lg">
+            <FadeIn direction="left" className="w-48 h-48 relative rounded-full overflow-hidden border-2 border-accent-1 shadow-lg flex-shrink-0">
               <Image src={me} alt="David Gonzalez" fill className="object-cover" />
-            </div>
-            <div className="flex-1 text-center md:text-left">
+            </FadeIn>
+            <FadeIn direction="right" delay={0.15} className="flex-1 text-center md:text-left">
               <h3 className="text-2xl font-bold mb-3 text-accent-1">David Gonzalez</h3>
               <p className="text-lg text-gray-700 leading-relaxed">
                 Soy David, un joven venezolano, desarrollador de software y docente. Apasionado por el marketing y el
@@ -161,7 +179,7 @@ export default function LandingPage() {
                 Academy. También soy profesor en la Academia internacional de programación Algorithmics en
                 Valencia, Venezuela. Mi objetivo es darte el conocimiento para que navegues seguro.
               </p>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -172,21 +190,29 @@ export default function LandingPage() {
         className="py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-r from-main-1 to-main-2 "
       >
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-            ¿Estás listo para asumir el control de tu seguridad en línea?
-          </h2>
-          <p className="text-xl mb-8 text-blue-100">
-            Ingresa tu correo electrónico para recibir tu copia gratuita del ebook &quot;Sobrevive al mundo digital&quot;.
-          </p>
-          <div className="max-w-lg mx-auto bg-white rounded-lg p-4">
-            <ContactForm
-              mode="ebook"
-              buttonText="¡Descargar la Guía!"
-              eventForm="ebook-download"
-              onSubmit={downloadGuide}
-            />
-          </div>
-          <p className="text-sm text-blue-200 mt-4">Respetamos tu privacidad. No te enviaremos spam.</p>
+          <FadeIn>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              ¿Estás listo para asumir el control de tu seguridad en línea?
+            </h2>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <p className="text-xl mb-8 text-blue-100">
+              Ingresa tu correo electrónico para recibir tu copia gratuita del ebook &quot;Sobrevive al mundo digital&quot;.
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <div className="max-w-lg mx-auto bg-white rounded-lg p-4">
+              <ContactForm
+                mode="ebook"
+                buttonText="¡Descargar la Guía!"
+                eventForm="ebook-download"
+                onSubmit={downloadGuide}
+              />
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <p className="text-sm text-blue-200 mt-4">Respetamos tu privacidad. No te enviaremos spam.</p>
+          </FadeIn>
         </div>
       </section>
     </div>

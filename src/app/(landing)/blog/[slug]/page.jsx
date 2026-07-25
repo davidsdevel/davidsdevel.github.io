@@ -1,21 +1,22 @@
 import { notFound } from "next/navigation";
 import Article from "../_components/article"
 import request from "@/lib/cms/request";
+import { cache } from 'react';
 
-export const dynamic = "force-static";
 export const dynamicParams = true;
 
-export function generateStaticParams() {
-  return [];
-}
+export const getPost = cache(async (slug) => {
+    return request(`/posts/${slug}?status=PUBLISHED&select=slug,id,title,description,thumbnail,content,published,updated,author,tags,category`);
+});
 
 export async function generateMetadata({params}) {
     const {slug} = await params;
 
-    const data = await request(`/posts/${slug}?status=PUBLISHED&select=title,description,thumbnail,tags,published,updated`);
+    const data = await getPost(slug);
 
-    if (!data)
-        return notFound();
+    if (!data) {
+        return {};
+    }
 
     const title = `${data.title} | David's Devel`;
     const description = data.description;
@@ -51,7 +52,7 @@ export async function generateMetadata({params}) {
 export default async function Page({params}) {
     const {slug} = await params;
 
-    const data = await request(`/posts/${slug}?status=PUBLISHED&select=slug,id,title,description,thumbnail,content,published,updated,author,tags,category`);
+    const data = await getPost(slug);
 
     if (!data)
         return notFound();

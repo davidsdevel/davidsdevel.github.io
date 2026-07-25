@@ -1,4 +1,6 @@
 import { TbPoint } from "react-icons/tb"
+import FadeIn from '@/app/_ui/fadeIn';
+import StaggerContainer from '@/app/_ui/staggerContainer';
 
 const pricingValues = [
     {
@@ -39,14 +41,18 @@ const pricingValues = [
 
 export default function Pricing() {
     return <div className="bg-main-1 px-2 py-24 md:py-48">
-        <h3 className="text-center text-white text-4xl">Precios <span className="text-accent-1">adaptados a tus necesitades</span></h3>
-        <p className="text-lg text-center text-white py-12 md:max-w-4xl md:m-auto md:text-xl">
-            Sabemos que tú y tu negocio son únicos, consigue precios que se ajustan específicamente a tus necesidades.
-            Tanto si estás comenzando y buscas una solución asequible,
-            como si necesitas características avanzadas para llevar tu negocio al siguiente nivel.
-        </p>
+        <FadeIn>
+            <h3 className="text-center text-white text-4xl">Precios <span className="text-accent-1">adaptados a tus necesitades</span></h3>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+            <p className="text-lg text-center text-white py-12 md:max-w-4xl md:m-auto md:text-xl">
+                Sabemos que tú y tu negocio son únicos, consigue precios que se ajustan específicamente a tus necesidades.
+                Tanto si estás comenzando y buscas una solución asequible,
+                como si necesitas características avanzadas para llevar tu negocio al siguiente nivel.
+            </p>
+        </FadeIn>
 
-        <div className="grid grid-cols gap-4 md:grid-cols-3 md:max-w-[70rem] md:m-auto">
+        <StaggerContainer className="grid grid-cols gap-4 md:grid-cols-3 md:max-w-[70rem] md:m-auto">
             {
                 pricingValues.map(pricing => {
                     return <div className="bg-white px-4 py-8 rounded-lg md:px-8 md:py-12" key={pricing.title}>
@@ -70,8 +76,10 @@ export default function Pricing() {
                     </div>
                 })
             }
-        </div>
+        </StaggerContainer>
 
-        <h4 className="text-center text-white text-4xl m-auto mt-12  md:max-w-4xl md:mt-24">¡Consigue una cotización a medida y descubre cómo podemos <span className="text-accent-1">ayudarte a alcanzar tus objetivos de marketing</span>!</h4>
+        <FadeIn delay={0.2}>
+            <h4 className="text-center text-white text-4xl m-auto mt-12  md:max-w-4xl md:mt-24">¡Consigue una cotización a medida y descubre cómo podemos <span className="text-accent-1">ayudarte a alcanzar tus objetivos de marketing</span>!</h4>
+        </FadeIn>
     </div>
 }

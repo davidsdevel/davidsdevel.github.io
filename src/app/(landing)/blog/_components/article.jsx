@@ -1,34 +1,31 @@
 'use client'
 
-import ContactForm from '@/app/_ui/contactForm';
+import dynamic from 'next/dynamic';
 import Aside from './aside';
 import Header from './header';
 import Content from './content';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+
+const ContactForm = dynamic(() => import('@/app/_ui/contactForm'), { ssr: false });
 
 export default function Article({post}) {
-  const [canSend, setCanSend] = useState(false);
-
   useEffect(() => {
-    if (!canSend) {
-      setCanSend(true);
-    } else {
-      fetch('/api/token', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: '{}'
-      })
-        .then(res => res.json())
-        .then(({endpoint, secret}) => {
-          fetch(`${endpoint}/v1/views/${post.slug}`, {
-            method: 'POST',
-            headers: {'Authorization': `Bearer ${secret}`}
-          })
+    fetch('/api/token', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: '{}'
+    })
+      .then(res => res.json())
+      .then(({endpoint, secret}) => {
+        fetch(`${endpoint}/v1/views/${post.slug}`, {
+          method: 'POST',
+          headers: {'Authorization': `Bearer ${secret}`}
         })
-    }
-  }, [post.id, canSend]);
+      })
+      .catch(() => {});
+  }, [post.id]);
 
   return <div>
     <Header title={post.title} description={post.description} thumbnail={post.thumbnail} breadcrumbs/>

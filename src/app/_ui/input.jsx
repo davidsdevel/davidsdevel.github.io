@@ -13,7 +13,7 @@ export function Input({id, type, label, className = '', ...props}) {
 
   _className = `${_className} ${className}`;
 
-  return <div className='mt-1 w-full'>
+  return <div className='mt-1 w-full flex flex-col items-start'>
     {
       label &&
       <label htmlFor={id} className='text-xs text-stone-600'>{label}</label>

@@ -14,7 +14,8 @@ module.exports = {
         'black-2': '#24272B',
         'black-3': '#3f3d56',
         "lettercms-1": "#5f4dee",
-        "lettercms-2": "#362e6f"
+        "lettercms-2": "#362e6f",
+        "curso-purple": "#7c3aed"
       }
     },
   },

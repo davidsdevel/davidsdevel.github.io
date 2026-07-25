@@ -7,7 +7,11 @@ import Contact from './_components/contact';
 
 export const metadata = {
     title: 'Acerca de mi - David\'s Devel',
-    description: 'Desarrollador Full Stack en Tecnologia Javascript'
+    description: 'Desarrollador Full Stack en Tecnologia Javascript',
+    openGraph: {
+        title: 'Acerca de mi - David\'s Devel',
+        description: 'Desarrollador Full Stack en Tecnologia Javascript',
+    }
 }
 
 export default function Main() {

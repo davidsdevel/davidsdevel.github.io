@@ -1,5 +1,7 @@
 import {CiMonitor, CiServer, CiViewList} from 'react-icons/ci';
 import { RiFlowChart } from "react-icons/ri";
+import FadeIn from '@/app/_ui/fadeIn'
+import StaggerContainer from '@/app/_ui/staggerContainer'
 
 const skills = [
   {
@@ -55,10 +57,12 @@ const skills = [
 export default function Skills() {
   return <section id="skills" className='px-2 -mb-24 md:px-24'>
     <div className='w-full bg-black-3 relative py-12 -top-40 rounded-xl px-4'>
-      <div className="section-heading text-center text-white">
-        <h3 className='text-xl font-bold py-8'>Habilidades</h3>
-      </div>
-      <div className='grid grid-cols-1 gap-4 w-full sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+      <FadeIn>
+        <div className="section-heading text-center text-white">
+          <h3 className='text-xl font-bold py-8'>Habilidades</h3>
+        </div>
+      </FadeIn>
+      <StaggerContainer className='grid grid-cols-1 gap-4 w-full sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
         {skills.map((e, i) => {
           return <div key={e.name} className='w-full flex flex-col items-center py-8 border border-gray-500 rounded-lg'>
             <div className='bg-accent-1 p-4 rounded-full'>
@@ -76,7 +80,7 @@ export default function Skills() {
             </ul>
           </div>
         })}
-      </div>
+      </StaggerContainer>
     </div>
   </section>
 }

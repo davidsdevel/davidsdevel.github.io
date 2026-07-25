@@ -1,19 +1,25 @@
 import Container from './container';
+import FadeIn from '@/app/_ui/fadeIn'
+import StaggerContainer from '@/app/_ui/staggerContainer'
 
 export default function Description() {
   return <div className="flex z-10 flex-col text-center mt-12 w-full bg-lettercms-1">
     <div className='text-white'>
-      <div className="text-4xl font-bold">
-        CREA
-      </div>
+      <FadeIn>
+        <div className="text-4xl font-bold">
+          CREA
+        </div>
+      </FadeIn>
+      <FadeIn delay={0.1}>
         <h3 className='mt-2 mb-8'>
           Crea el mejor contenido para tus usuarios con herramientas dise&ntilde;adas para ti
         </h3>
-    </div> 
-    <div className="flex flex-col py-8 bg-lettercms-1 z-10 items-center md:flex-row">
+      </FadeIn>
+    </div>
+    <StaggerContainer className="flex flex-col py-8 bg-lettercms-1 z-10 items-center md:flex-row">
       <Container className='bg-white md:mx-4'>
         <div className='justify-center flex'>
-          <img className="w-full" src='/illustrations/5.svg' alt="Editores WYSIWYG"/>
+          <img className="w-full" src='/illustrations/5.svg' alt="Editores WYSIWYG" loading="lazy"/>
         </div>
         <div className="card-body">
           <h4 className="my-8 font-bold text-2xl text-gray-400">
@@ -26,7 +32,7 @@ export default function Description() {
       </Container>
       <Container className='bg-white md:mx-4'>
         <div className='justify-center flex'>
-          <img className="w-full" src='/illustrations/109.svg' alt="Pruebas A/B"/>
+          <img className="w-full" src='/illustrations/109.svg' alt="Pruebas A/B" loading="lazy"/>
         </div>
         <div className="card-body">
           <h4 className="my-8 font-bold text-2xl text-gray-400">
@@ -39,7 +45,7 @@ export default function Description() {
       </Container>
       <Container className='bg-white md:mx-4'>
         <div className='justify-center flex'>
-          <img className="w-full" src='/illustrations/125.svg' alt="Colaboradores"/>
+          <img className="w-full" src='/illustrations/125.svg' alt="Colaboradores" loading="lazy"/>
         </div>
         <div className="card-body">
           <h4 className="my-8 font-bold text-2xl text-gray-400">
@@ -50,7 +56,7 @@ export default function Description() {
           </p>
         </div>
       </Container>
-    </div>
+    </StaggerContainer>
     <svg className="bg-white -mt-1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1920 310">
       <path fill="#5f4dee" d="M0,283.054c22.75,12.98,53.1,15.2,70.635,14.808,92.115-2.077,238.3-79.9,354.895-79.938,59.97-.019,106.17,18.059,141.58,34,47.778,21.511,47.778,21.511,90,38.938,28.418,11.731,85.344,26.169,152.992,17.971,68.127-8.255,115.933-34.963,166.492-67.393,37.467-24.032,148.6-112.008,171.753-127.963,27.951-19.26,87.771-81.155,180.71-89.341,72.016-6.343,105.479,12.388,157.434,35.467,69.73,30.976,168.93,92.28,256.514,89.405,100.992-3.315,140.276-41.7,177-64.9V0.24H0V283.054Z"/>
     </svg>

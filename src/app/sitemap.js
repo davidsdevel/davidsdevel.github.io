@@ -1,10 +1,18 @@
 import request from "@/lib/cms/request";
 
-//export const dynamic = "force-static";
-//export const dynamicParams = true;
+export const revalidate = 3600;
 
 export default async function sitemap() {
   const {data: posts} = await request(`/posts?status=PUBLISHED&limit=1000&select=slug,updated`)
+
+  const postEntries = Array.isArray(posts)
+    ? posts.map(e => ({
+        url: `https://www.davidsdevel.com/blog/${e.slug}`,
+        lastModified: e.updated,
+        changeFrequency: 'weekly',
+        priority: 1,
+      }))
+    : [];
 
   return [
     {
@@ -25,13 +33,6 @@ export default async function sitemap() {
       changeFrequency: 'weekly',
       priority: 0.6,
     },
-    ...posts.map(e => {
-      return {
-        url: `https://www.davidsdevel.com/blog/${e.slug}`,
-        lastModified: e.updated,
-        changeFrequency: 'weekly',
-        priority: 1,
-      }
-    })
+    ...postEntries
   ];
 }

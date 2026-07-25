@@ -1,36 +1,50 @@
 'use client'
 
 import Button from '@/app/_ui/button'
+import FadeIn from '@/app/_ui/fadeIn'
+import StaggerContainer from '@/app/_ui/staggerContainer'
 
 const projects = [
   {
-    title: 'Condominium Manager',
-    img: '/images/portfolio/sagacondominios.webp',
+    title: 'Landing empresas de condominios',
+    img: 'https://lettercms-api.davidsdevel.com/images/public/saga.png?h=300&q=75',
     url: 'https://www.sagacondominios.com'
   },
   {
-    title: 'Communication system',
+    title: 'Plataforma de gestion de condominios',
+    img: 'https://lettercms-api.davidsdevel.com/images/public/saga-admin.png?h=300&q=75',
+    url: 'https://saga-admin.davidsdevel.com'
+  },
+  {
+    title: 'Plataforma de comunicacion',
     img: '/images/portfolio/lakar.webp',
-    url: 'https://lakar.davidsdevel.site'
+    url: 'https://lakar.davidsdevel.com'
   },
   {
-    title: 'Content Management System',
+    title: 'Sistema de gestion de contenido (CMS)',
     img: '/images/portfolio/lettercms.webp',
-    url: 'https://lettercms.lavozdeoieniv.com'
+    url: 'https://lettercms.davidsdevel.com'
   },
   {
-    title: 'Radio Station Landing Page',
+    title: 'Sitio web para emisora de radio',
     img: '/images/portfolio/lavozdeoieniv.webp',
     url: 'https://www.lavozdeoieniv.com'
-  }
+  },
+  {
+    title: 'Plataforma educativa',
+    img: 'https://lettercms-api.davidsdevel.com/images/public/uecam-plaform.png?h=300&q=75',
+    url: 'https://uecam.davidsdevel.com'
+  },
 ];
 
 export default function Portfolio() {
   return <section id="portfolio" className="px-2 pb-24 md:px-24">
-    <div className="w-full flex justify-center pb-12">
-      <h3 className="text-xl font-bold">Proyectos</h3>
-    </div>
-    <ul className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'>
+    <FadeIn>
+      <div className="w-full flex justify-center pb-12">
+        <h3 className="text-xl font-bold">Proyectos</h3>
+      </div>
+    </FadeIn>
+    <StaggerContainer className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'>
       {
         projects.map(e => {
           return <li key={e.url}>
@@ -43,6 +57,6 @@ export default function Portfolio() {
           </li>
         })
       }
-    </ul>
+    </StaggerContainer>
   </section>
 }

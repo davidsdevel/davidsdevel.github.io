@@ -1,6 +1,8 @@
 'use client'
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import FadeIn from '@/app/_ui/fadeIn';
 
 const bussinessTransformations = [
     {
@@ -20,66 +22,55 @@ const bussinessTransformations = [
     }
 ]
 
-function BussinessCard({bussiness, isActive}) {
-    const ref = useRef(null);
-
-    useLayoutEffect(() => {
-        if (ref.current) {
-            if (isActive) {
-                ref.current.style.display = 'flex';
-                
-                setTimeout(() => {
-                    ref.current.style.opacity = 1;
-                    ref.current.style.transform = 'translateY(0)';
-                }, 0);
-            } else {
-                ref.current.style.opacity = 0;
-                ref.current.style.transform = 'translateY(-10px)';
-                ref.current.style.display = 'none';
-                
-            }
-        }
-    }, [isActive]);
-
-    return <div key={`content-${bussiness.name}`} ref={ref} className="transition-all duration-150 ease py-12 text-center flex flex-col md:flex-row md:items-center md:max-w-7xl md:m-auto md:gap-24">
+function BussinessCard({ bussiness, direction }) {
+    return <motion.div
+        key={bussiness.name}
+        initial={{ opacity: 0, x: direction > 0 ? 30 : -30 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: direction > 0 ? -30 : 30 }}
+        transition={{ duration: 0.35, ease: 'easeInOut' }}
+        className="py-12 text-center flex flex-col md:flex-row md:items-center md:max-w-7xl md:m-auto md:gap-24"
+    >
         <div className="md:w-1/2 md:px-12">
-            <img src={bussiness.logo} alt={`${bussiness.name} logo`}/>
+            <img src={bussiness.logo} alt={`${bussiness.name} logo`} loading="lazy"/>
         </div>
         <div className="md:w-1/2">
             <h4 className="text-2xl text-accent-1 md:text-4xl">{bussiness.name}</h4>
             <p className="mt-4 text-slate-500">{bussiness.text}</p>
         </div>
-    </div>
-
+    </motion.div>
 }
 
 export default function Transform() {
     const [activeTab, setActiveTab] = useState(0);
+    const [prevTab, setPrevTab] = useState(-1);
 
-    useLayoutEffect(() => {
-        const tabs = document.querySelectorAll('.tabs button');
-
-        tabs.forEach((tab, index) => {
-            tab.addEventListener('click', () => {
-                setActiveTab(index);
-            });
-        });
-    }, []);
+    const handleTabChange = (index) => {
+        setPrevTab(activeTab);
+        setActiveTab(index);
+    };
 
     return <div className="bg-slate-200 px-4 py-12 md:py-32">
-        <h3 className="text-3xl md:text-4xl text-center mt-12 mb-24">Grandes empresas transformaron su negocio gracias a <span className="text-accent-1">estrategias digitales</span></h3>
+        <FadeIn>
+            <h3 className="text-3xl md:text-4xl text-center mt-12 mb-24">Grandes empresas transformaron su negocio gracias a <span className="text-accent-1">estrategias digitales</span></h3>
+        </FadeIn>
 
-        <div className="bg-main-1 w-full m-auto grid grid-cols-1 gap-2 p-2 rounded-xl md:grid-cols-3 md:max-w-xl">
-            {
-                bussinessTransformations.map((bussiness, i) => {
-                    return <button key={`tabs-${bussiness.name}`} className="bg-white text-main-1 w-full py-2 rounded-lg disabled:bg-accent-1 disabled:text-white" disabled={activeTab === i} onClick={() => setActiveTab(i)}>{bussiness.name}</button>
-                })
-            }
-        </div>
-        {
-            bussinessTransformations.map((bussiness, i) => {
-                return <BussinessCard key={`content-${bussiness.name}`} isActive={activeTab === i} bussiness={bussiness}/>
-            })
-        }
+        <FadeIn>
+            <div className="bg-main-1 w-full m-auto grid grid-cols-1 gap-2 p-2 rounded-xl md:grid-cols-3 md:max-w-xl">
+                {
+                    bussinessTransformations.map((bussiness, i) => {
+                        return <button key={`tabs-${bussiness.name}`} className="bg-white text-main-1 w-full py-2 rounded-lg disabled:bg-accent-1 disabled:text-white" disabled={activeTab === i} onClick={() => handleTabChange(i)}>{bussiness.name}</button>
+                    })
+                }
+            </div>
+        </FadeIn>
+
+        <AnimatePresence mode="wait" initial={false}>
+            <BussinessCard
+                key={activeTab}
+                bussiness={bussinessTransformations[activeTab]}
+                direction={activeTab - prevTab}
+            />
+        </AnimatePresence>
     </div>
 }

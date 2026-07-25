@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useRef } from 'react';
 import { CiCircleMinus } from 'react-icons/ci';
 
@@ -12,10 +14,11 @@ export default function Modal({
 
 	useEffect(() => {
 		if (modalRef.current) {
+			let timeoutId;
 			if (isOpened) {
 				modalRef.current.style.display = 'flex';
 
-				setTimeout(() => {
+				timeoutId = setTimeout(() => {
 					if (modalRef.current) {
 						modalRef.current.style.opacity = '1';
 					}
@@ -23,12 +26,13 @@ export default function Modal({
 			} else {
 				modalRef.current.style.opacity = '0';
 
-				setTimeout(() => {
+				timeoutId = setTimeout(() => {
 					if (modalRef.current) {
 						modalRef.current.style.display = 'none';
 					}
 				}, 300);
 			}
+			return () => clearTimeout(timeoutId);
 		}
 	}, [isOpened]);
 
