@@ -12,7 +12,9 @@ export const metadata = {
   openGraph: {
     title,
     description,
+    url: 'https://www.davidsdevel.com/landing/programacion',
     type: 'website',
+    images: ['https://www.davidsdevel.com/clases-og.png'],
   },
 }
 

@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './global.css';
 
 const title = "David's Devel - Desarrollador Full Stack & Marketing Digital";
-const description = 'Desarrollador Full Stack e Inbound Marketer. Soluciones digitales para el crecimiento de tu negocio.';
+const description = 'Desarrollador Full Stack e Inbound Marketer especializado en Next.js, React y estrategias de marketing digital para impulsar el crecimiento de tu negocio.';
 
 export const metadata = {
   
@@ -15,15 +15,15 @@ export const metadata = {
   openGraph: {
     title,
     description,
-    siteName: title,
+    siteName: "David's Devel",
     locale: 'es_LA',
-    type: 'website',
+    type: 'website'
   },
   twitter: {
     card: 'summary_large_image',
     title,
     description,
-    creator: '@davidsdevel',
+    creator: '@davidsdevel'
   },
   authors: [
     {
